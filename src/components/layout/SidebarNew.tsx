@@ -1,0 +1,493 @@
+import { 
+  MousePointerClick, 
+  FormInput, 
+  Compass, 
+  Grid3x3, 
+  MessageSquare, 
+  LayoutGrid,
+  Sparkles,
+  CheckCircle,
+  Accessibility,
+  Palette,
+  Paintbrush,
+  Scale,
+  Zap,
+  Home,
+  Search,
+  PanelLeft,
+  X,
+  Clapperboard,
+  ImageIcon,
+  BookOpen,
+  Layers,
+  FileText,
+  Upload,
+  ListChecks,
+  Workflow,
+  TrendingUp
+} from "lucide-react";
+import { useState } from "react";
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarRail,
+  SidebarGroup,
+  SidebarGroupLabel,
+  useSidebar,
+} from "../ui/sidebar";
+import { Badge } from "../ui/badge";
+import { Logo } from "./Logo";
+
+// ⚠️ CRITICAL: PageId es la FUENTE DE VERDAD de todos los IDs de página
+// ⚠️ ANTES DE MODIFICAR: Leer /DSM_ARCHITECTURE.md sección "MAPA COMPLETO DE PageId"
+// ⚠️ Cada PageId DEBE tener:
+//    1. Caso en PageRenderer.tsx (switch statement)
+//    2. Import del componente en PageRenderer.tsx
+//    3. Item en menuSections array (abajo en línea 102+)
+// ⚠️ NO eliminar PageId sin buscar TODAS las referencias (Ctrl+F)
+export type PageId =
+  // Home
+  | "home"
+  // Actions
+  | "button" | "button-new" | "toggle" | "toggle-group"
+  // Forms
+  | "input" | "input-new" | "input-file" | "select" | "select-new" | "checkbox" | "checkbox-new" | "radio-group" | "radio-group-new" | "switch" | "switch-new" | "slider" | "slider-new"
+  | "textarea" | "textarea-new" | "textarea-autoresize" | "calendar" | "calendar-new" | "form" | "form-new" | "input-otp" | "input-otp-new" | "label" | "combobox" | "combobox-new" | "multi-select" | "date-picker" | "date-picker-new" | "date-range-picker"
+  // Navigation
+  | "tabs" | "tabs-new" | "breadcrumb" | "command" | "dropdown-menu" | "menubar" 
+  | "navigation-menu" | "pagination" | "context-menu"
+  // Data Display
+  | "card" | "card-new" | "badge" | "badge-new" | "avatar" | "hover-card" | "separator"
+  // Feedback
+  | "alert" | "alert-new" | "alert-dialog" | "dialog" | "dialog-new" | "toast" | "tooltip" | "progress" 
+  | "skeleton" | "sheet" | "drawer" | "popover"
+  // Layout
+  | "accordion" | "carousel" | "collapsible" | "resizable" | "scroll-area" | "sidebar-showcase"
+  // Patterns
+  | "invoice-generator" | "payment-form" | "editable-table" | "invoice-upload" | "business-components"
+  | "stats-dashboard" | "quick-action" | "data-table-advanced" | "advanced-filter" | "approval-timeline" | "multi-step-wizard" | "multi-step-form" | "multi-step-form-vertical" | "multi-step-wizard-vertical"
+  // Atomic
+  | "atomic-atoms" | "atomic-molecules" | "atomic-organisms" | "atomic-templates" | "atomic-pages"
+  // Advanced
+  | "charts" | "color-picker" | "rating" | "date-range-advanced" | "file-uploader" | "rich-text-editor" | "timeline" | "data-table" | "tree-table" | "pivot-table" | "export-data" | "kpi-showcase"
+  // Data Visualization (Medium Priority)
+  | "data-visualization"
+  // Advanced Forms (Medium Priority)
+  | "advanced-forms"
+  // Special
+  | "official" | "accessibility" | "brand-layout" | "theme-customizer" | "elevation" | "grid-showcase" | "help-system-demo" | "animations" | "icon-gallery" | "changelog";
+
+interface SidebarProps extends React.ComponentProps<typeof Sidebar> {
+  activePage: PageId;
+  onPageChange: (page: PageId) => void;
+}
+
+interface MenuItem {
+  id: PageId;
+  label: string;
+  new?: boolean;
+}
+
+export function SidebarNew({ activePage, onPageChange, ...props }: SidebarProps) {
+  const [searchQuery, setSearchQuery] = useState("");
+  const { toggleSidebar } = useSidebar();
+
+  const components = [
+    // Actions
+    { id: "button", label: "Button", icon: MousePointerClick },
+    { id: "toggle", label: "Toggle", icon: MousePointerClick },
+    { id: "toggle-group", label: "Toggle Group", icon: MousePointerClick },
+    
+    // Advanced
+    { id: "charts", label: "Charts", icon: Sparkles },
+    { id: "data-visualization", label: "Data Visualization", new: true, icon: Sparkles },
+    { id: "advanced-forms", label: "Advanced Forms", new: true, icon: Sparkles },
+    { id: "data-table", label: "Data Table", icon: Sparkles },
+    { id: "tree-table", label: "Tree Table", icon: Sparkles },
+    { id: "pivot-table", label: "Pivot Table", icon: Sparkles },
+    { id: "export-data", label: "Export Data", icon: Sparkles },
+    { id: "color-picker", label: "Color Picker", icon: Sparkles },
+    { id: "rating", label: "Rating", icon: Sparkles },
+    { id: "file-uploader", label: "File Uploader", icon: Sparkles },
+    { id: "rich-text-editor", label: "Rich Text Editor", icon: Sparkles },
+    { id: "timeline", label: "Timeline", icon: Sparkles },
+    { id: "kpi-showcase", label: "KPI Showcase", new: true, icon: TrendingUp },
+
+    // Data Display
+    { id: "card", label: "Card", icon: Grid3x3 },
+    { id: "table", label: "Table", icon: Grid3x3 },
+    { id: "badge", label: "Badge", icon: Grid3x3 },
+    { id: "avatar", label: "Avatar", icon: Grid3x3 },
+    { id: "hover-card", label: "Hover Card", icon: Grid3x3 },
+    { id: "separator", label: "Separator", icon: Grid3x3 },
+
+    // Feedback
+    { id: "alert", label: "Alert", icon: MessageSquare },
+    { id: "alert-dialog", label: "Alert Dialog", icon: MessageSquare },
+    { id: "dialog", label: "Dialog", icon: MessageSquare },
+    { id: "toast", label: "Toast (Sonner)", icon: MessageSquare },
+    { id: "tooltip", label: "Tooltip", icon: MessageSquare },
+    { id: "progress", label: "Progress", icon: MessageSquare },
+    { id: "skeleton", label: "Skeleton", icon: MessageSquare },
+    { id: "sheet", label: "Sheet", icon: MessageSquare },
+    { id: "drawer", label: "Drawer", icon: MessageSquare },
+    { id: "popover", label: "Popover", icon: MessageSquare },
+
+    // Forms
+    { id: "input", label: "Input", icon: FormInput },
+    { id: "input-file", label: "Input File", icon: FormInput },
+    { id: "textarea", label: "Textarea", icon: FormInput },
+    { id: "textarea-autoresize", label: "Textarea Autoresize", icon: FormInput },
+    { id: "select", label: "Select", icon: FormInput },
+    { id: "checkbox", label: "Checkbox", icon: FormInput },
+    { id: "radio-group", label: "Radio Group", icon: FormInput },
+    { id: "switch", label: "Switch", icon: FormInput },
+    { id: "slider", label: "Slider", icon: FormInput },
+    { id: "calendar", label: "Calendar", icon: FormInput },
+    { id: "date-picker", label: "Date Picker", icon: FormInput },
+    { id: "date-range-picker", label: "Date Range Picker", icon: FormInput },
+    { id: "combobox", label: "Combobox", icon: FormInput },
+    { id: "multi-select", label: "Multi Select", icon: FormInput },
+    { id: "form", label: "Form", icon: FormInput },
+    { id: "input-otp", label: "Input OTP", icon: FormInput },
+    { id: "label", label: "Label", icon: FormInput },
+
+    // Layout
+    { id: "accordion", label: "Accordion", icon: LayoutGrid },
+    { id: "carousel", label: "Carousel", icon: LayoutGrid },
+    { id: "collapsible", label: "Collapsible", icon: LayoutGrid },
+    { id: "resizable", label: "Resizable", icon: LayoutGrid },
+    { id: "scroll-area", label: "Scroll Area", icon: LayoutGrid },
+    { id: "sidebar-showcase", label: "Sidebar", icon: LayoutGrid },
+    { id: "grid-showcase", label: "Grid Showcase", icon: LayoutGrid },
+
+    // Navigation
+    { id: "tabs", label: "Tabs", icon: Compass },
+    { id: "breadcrumb", label: "Breadcrumb", icon: Compass },
+    { id: "command", label: "Command", icon: Compass },
+    { id: "dropdown-menu", label: "Dropdown Menu", icon: Compass },
+    { id: "menubar", label: "Menubar", icon: Compass },
+    { id: "navigation-menu", label: "Navigation Menu", icon: Compass },
+    { id: "pagination", label: "Pagination", icon: Compass },
+    { id: "context-menu", label: "Context Menu", icon: Compass },
+  ].sort((a, b) => a.label.localeCompare(b.label));
+
+  const designSystemPages: MenuItem[] = [
+    { id: "brand-layout", label: "Brand Layout" },
+    { id: "theme-customizer", label: "Theme Customizer" },
+    { id: "elevation", label: "Elevation Styles" },
+  ];
+
+  const patternsPages: MenuItem[] = [
+    { id: "business-components", label: "Business Components" },
+    { id: "editable-table", label: "Editable Table" },
+    { id: "invoice-generator", label: "Invoice Generator" },
+    { id: "invoice-upload", label: "Invoice Upload" },
+    { id: "multi-step-form", label: "Multi-Step Form" },
+    { id: "multi-step-form-vertical", label: "Multi-Step Form (Vertical)" },
+    { id: "multi-step-wizard", label: "Multi-Step Wizard" },
+    { id: "multi-step-wizard-vertical", label: "Multi-Step Wizard (Vertical)" },
+  ].sort((a, b) => a.label.localeCompare(b.label));
+
+  const resourcePages: MenuItem[] = [
+    { id: "animations", label: "Animations", new: true },
+    { id: "icon-gallery", label: "Icon Gallery", new: true },
+    { id: "help-system-demo", label: "Help System" },
+  ];
+
+  const specialPages: MenuItem[] = [
+    { id: "official", label: "Official Verification" },
+    { id: "accessibility", label: "WCAG Accessibility" },
+    { id: "changelog", label: "Changelog" },
+  ];
+
+  // Flatten items for search (updated to use the new components array)
+  const allItems = [
+    ...components.map(item => ({ 
+      ...item, 
+      section: "Components",
+    })),
+    ...resourcePages.map(item => ({ 
+      ...item, 
+      section: "Analysis", 
+      icon: Sparkles 
+    })),
+    ...specialPages.map(item => ({ 
+      ...item, 
+      section: "Analysis", 
+      icon: Sparkles 
+    })),
+    ...designSystemPages.map(item => ({ 
+      ...item, 
+      section: "Design System", 
+      icon: Sparkles 
+    })),
+    ...patternsPages.map(item => ({ 
+      ...item, 
+      section: "Patterns", 
+      icon: Sparkles 
+    }))
+  ];
+
+  const searchResults = searchQuery 
+    ? allItems.filter(item => item.label.toLowerCase().includes(searchQuery.toLowerCase()))
+    : [];
+
+  return (
+    <Sidebar 
+      collapsible="icon" 
+      {...props} 
+      className="border-r border-sidebar-border"
+    >
+      <SidebarHeader>
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-3 px-2 py-2">
+            <Logo size="md" variant="auto" className="flex-shrink-0" />
+          </div>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton
+                isActive={activePage === "home"}
+                onClick={() => onPageChange("home")}
+                tooltip="Home"
+                className="w-full"
+              >
+                <Home className="h-4 w-4" />
+                <span className="text-sidebar-foreground">Home</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+
+          {/* Search Input */}
+          <div className="px-2 pb-2">
+            <div className="relative group/search">
+              <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-sidebar-foreground/50 transition-colors group-focus-within/search:text-primary" />
+              <input
+                type="text"
+                placeholder="Buscar componente..."
+                className="w-full rounded-md bg-sidebar-accent/20 border border-sidebar-border/50 pl-9 pr-8 py-2 text-sm text-sidebar-foreground placeholder:text-sidebar-foreground/40 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:bg-sidebar-accent/30 focus:border-primary/50 transition-all"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              {searchQuery && (
+                <button 
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-2 top-2.5 text-sidebar-foreground/50 hover:text-sidebar-foreground p-0.5 hover:bg-sidebar-accent/50 rounded-sm transition-colors"
+                >
+                  <X className="h-3.5 w-3.5" />
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      </SidebarHeader>
+      
+      <SidebarContent className="overflow-y-auto no-scrollbar">
+        {searchQuery ? (
+          <SidebarGroup>
+            <SidebarGroupLabel className="text-sidebar-foreground/90 px-2 mb-2">
+              Resultados ({searchResults.length})
+            </SidebarGroupLabel>
+            <SidebarMenu>
+              {searchResults.length > 0 ? (
+                searchResults.map((item) => (
+                  <SidebarMenuItem key={item.id}>
+                    <SidebarMenuButton
+                      isActive={activePage === item.id}
+                      onClick={() => {
+                        onPageChange(item.id);
+                        // Optional: keep search active or clear it? keeping it active is usually better for browsing results
+                      }}
+                      tooltip={item.label}
+                      className="h-auto py-2"
+                    >
+                      {item.icon ? <item.icon className="h-4 w-4 shrink-0" /> : <Sparkles className="h-4 w-4 shrink-0" />}
+                      <div className="flex flex-col gap-0.5 items-start overflow-hidden w-full">
+                        <span className="text-sidebar-foreground truncate w-full">{item.label}</span>
+                        <span className="text-xs text-sidebar-foreground/50 uppercase">{item.section}</span>
+                      </div>
+                      {item.new && (
+                        <Badge variant="default" className="ml-auto h-4 px-1 text-xs border-none bg-primary text-primary-foreground font-medium">
+                          NEW
+                        </Badge>
+                      )}
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))
+              ) : (
+                <div className="px-4 py-12 flex flex-col items-center text-center gap-2">
+                   <div className="h-12 w-12 rounded-full bg-sidebar-accent/20 flex items-center justify-center text-sidebar-foreground/30">
+                     <Search className="h-6 w-6" />
+                   </div>
+                   <p className="text-sm text-sidebar-foreground/60">
+                     No se encontraron resultados para "{searchQuery}"
+                   </p>
+                </div>
+              )}
+            </SidebarMenu>
+          </SidebarGroup>
+        ) : (
+          <>
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-sidebar-foreground/90">Components</SidebarGroupLabel>
+          <SidebarMenu>
+            {components.map((item) => (
+              <SidebarMenuItem key={item.id}>
+                <SidebarMenuButton 
+                  isActive={activePage === item.id}
+                  onClick={() => onPageChange(item.id)}
+                  tooltip={item.label}
+                >
+                  <item.icon />
+                  <span className="flex flex-1 items-center gap-2 overflow-hidden text-sidebar-foreground group-data-[active=true]/menu-button:text-sidebar-primary-foreground group-data-[active=true]/menu-button:font-medium">
+                    <span className="truncate">{item.label}</span>
+                    {item.new && (
+                      <Badge variant="default" className="shrink-0 h-4 px-1 text-xs border-none font-medium">
+                        NEW
+                      </Badge>
+                    )}
+                  </span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
+          </SidebarMenu>
+        </SidebarGroup>
+        
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-sidebar-foreground/90">Recursos</SidebarGroupLabel>
+          <SidebarMenu>
+            {resourcePages.map((page) => (
+              <SidebarMenuItem key={page.id}>
+                <SidebarMenuButton 
+                  isActive={activePage === page.id}
+                  onClick={() => onPageChange(page.id)}
+                  tooltip={page.label}
+                >
+                  {page.id === "help-system-demo" && <Zap />}
+                  {page.id === "animations" && <Clapperboard />}
+                  {page.id === "icon-gallery" && <ImageIcon />}
+                  <span className="flex flex-1 items-center gap-2 overflow-hidden text-sidebar-foreground group-data-[active=true]/menu-button:text-sidebar-primary-foreground group-data-[active=true]/menu-button:font-medium">
+                    <span className="truncate">{page.label}</span>
+                    {page.new && (
+                      <Badge variant="default" className="shrink-0 h-4 px-1 text-xs border-none font-medium">
+                        NEW
+                      </Badge>
+                    )}
+                  </span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
+          </SidebarMenu>
+        </SidebarGroup>
+
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-sidebar-foreground/90">Design System</SidebarGroupLabel>
+          <SidebarMenu>
+            {designSystemPages.map((page) => (
+              <SidebarMenuItem key={page.id}>
+                <SidebarMenuButton 
+                  isActive={activePage === page.id}
+                  onClick={() => onPageChange(page.id)}
+                  tooltip={page.label}
+                >
+                  {page.id === "brand-layout" && <Paintbrush />}
+                  {page.id === "theme-customizer" && <Palette />}
+                  {page.id === "elevation" && <Scale />}
+                  <span className="flex flex-1 items-center gap-2 overflow-hidden text-sidebar-foreground group-data-[active=true]/menu-button:text-sidebar-primary-foreground group-data-[active=true]/menu-button:font-medium">
+                    <span className="truncate">{page.label}</span>
+                    {page.new && (
+                      <Badge variant="default" className="shrink-0 h-4 px-1 text-xs border-none font-medium">
+                        NEW
+                      </Badge>
+                    )}
+                  </span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
+          </SidebarMenu>
+        </SidebarGroup>
+
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-sidebar-foreground/90">Patterns</SidebarGroupLabel>
+          <SidebarMenu>
+            {patternsPages.map((page) => (
+              <SidebarMenuItem key={page.id}>
+                <SidebarMenuButton 
+                  isActive={activePage === page.id}
+                  onClick={() => onPageChange(page.id)}
+                  tooltip={page.label}
+                >
+                  {page.id === "business-components" && <Layers />}
+                  {page.id === "editable-table" && <ListChecks />}
+                  {page.id === "invoice-generator" && <FileText />}
+                  {page.id === "invoice-upload" && <Upload />}
+                  {page.id === "multi-step-form" && <Workflow />}
+                  {page.id === "multi-step-form-vertical" && <Workflow />}
+                  {page.id === "multi-step-wizard" && <Workflow />}
+                  {page.id === "multi-step-wizard-vertical" && <Workflow />}
+                  <span className="flex flex-1 items-center gap-2 overflow-hidden text-sidebar-foreground group-data-[active=true]/menu-button:text-sidebar-primary-foreground group-data-[active=true]/menu-button:font-medium">
+                    <span className="truncate">{page.label}</span>
+                    {page.new && (
+                      <Badge variant="default" className="shrink-0 h-4 px-1 text-xs border-none font-medium">
+                        NEW
+                      </Badge>
+                    )}
+                  </span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
+          </SidebarMenu>
+        </SidebarGroup>
+
+        <SidebarGroup>
+          <SidebarGroupLabel className="text-sidebar-foreground/90">Verificación</SidebarGroupLabel>
+          <SidebarMenu>
+            {specialPages.map((page) => (
+              <SidebarMenuItem key={page.id}>
+                <SidebarMenuButton 
+                  isActive={activePage === page.id}
+                  onClick={() => onPageChange(page.id)}
+                  tooltip={page.label}
+                >
+                  {page.id === "official" && <CheckCircle />}
+                  {page.id === "accessibility" && <Accessibility />}
+                  {page.id === "changelog" && <BookOpen />}
+                  <span className="text-sidebar-foreground group-data-[active=true]/menu-button:text-sidebar-primary-foreground group-data-[active=true]/menu-button:font-medium">{page.label}</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
+          </SidebarMenu>
+        </SidebarGroup>
+          </>
+        )}
+      </SidebarContent>
+
+      <SidebarFooter>
+         <div className="p-4 bg-sidebar-accent/10 rounded-lg m-2 group-data-[collapsible=icon]:hidden">
+            <div className="flex items-center gap-2 text-sidebar-foreground/90 text-xs">
+              <div className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+              <span>105 Componentes</span>
+            </div>
+         </div>
+         
+         <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton 
+                onClick={toggleSidebar} 
+                tooltip="Colapsar Sidebar"
+              >
+                <PanelLeft className="h-4 w-4" />
+                <span>Colapsar Sidebar</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+         </SidebarMenu>
+      </SidebarFooter>
+      <SidebarRail />
+    </Sidebar>
+  );
+}
