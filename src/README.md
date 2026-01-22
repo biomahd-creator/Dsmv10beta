@@ -1,12 +1,26 @@
-# 📚 DOCUMENTACIÓN PRINCIPAL
+# 📚 Documentación Completa
 
-| Documento | Propósito | Estado |
-|-----------|-----------|--------|
-| **README.md** (este archivo) | Guía rápida y mapa general | ✅ Completo |
-| **/DSM_ARCHITECTURE.md** | Arquitectura completa del DSM | ✅ Completo |
-| **/components/business/BUSINESS_COMPONENTS_ARCHITECTURE.md** | Componentes modulares reutilizables | ✅ Completo |
-| **/MODULAR_REFACTORING_GUIDE.md** | Guía de refactorización modular (eliminar estilos inline) | 🔄 En progreso (40%) |
-| **/Guidelines.md** | Guía oficial (PROVIDED BY USER) | ✅ Fuente de verdad |
+### Guidelines
+- **[Guidelines.md](./guidelines/Guidelines.md)** - Índice maestro del sistema de diseño
+- **[CORE.md](./guidelines/CORE.md)** - Stack tecnológico y arquitectura
+- **[TOKENS.md](./guidelines/TOKENS.md)** - Design tokens y sistema de colores
+- **[COMPONENTS.md](./guidelines/COMPONENTS.md)** - Catálogo de 48 componentes
+- **[EXAMPLES.md](./guidelines/EXAMPLES.md)** - Ejemplos de código y best practices
+- **[PROMPT_GUIDE.md](./guidelines/PROMPT_GUIDE.md)** - Guía para generación con IA
+- **[UXWRITING.md](./guidelines/UXWRITING.md)** - Redacción UX en español (LATAM)
+
+### Arquitectura
+- **[ATOMIC_DESIGN_ARCHITECTURE.md](./components/atomic/ATOMIC_DESIGN_ARCHITECTURE.md)** - Sistema Atomic Design
+- **[BUSINESS_COMPONENTS_ARCHITECTURE.md](./components/business/BUSINESS_COMPONENTS_ARCHITECTURE.md)** - Componentes de negocio
+
+### Auditorías y Reportes
+- **[AUDITORIA_2026.md](./AUDITORIA_2026.md)** - Auditoría completa del proyecto
+- **[AUDITORIA_GUIDELINES_2026.md](./AUDITORIA_GUIDELINES_2026.md)** - Auditoría de guidelines
+
+### Exportación y Distribución
+- **[EXPORT_SYSTEM_GUIDE.md](./EXPORT_SYSTEM_GUIDE.md)** - Guía completa para exportar como paquete NPM
+- **[NPM_SETUP_GUIDE.md](./NPM_SETUP_GUIDE.md)** - Tutorial detallado paso a paso para NPM
+- **[QUICK_START.md](./QUICK_START.md)** - ⚡ Publicar en NPM en 5 minutos
 
 ---
 

@@ -39,6 +39,13 @@ Para facilitar la lectura por IAs y humanos, la documentación se ha dividido en
 - Estilo: Tuteo, lenguaje natural.
 - Microcopy, mensajes de error y estados vacíos.
 
+### 7. [EXPORT_SYSTEM_GUIDE.md](../EXPORT_SYSTEM_GUIDE.md)
+**Exportación y Distribución**. Guía completa para replicar el sistema de diseño como paquete NPM.
+- 4 métodos de distribución (NPM Privado, Monorepo, Git Submodule, Copy-Paste).
+- Configuración paso a paso con ejemplos completos.
+- Comparativa de métodos según tamaño de equipo y proyectos.
+- Troubleshooting y mejores prácticas.
+
 ---
 
 ## USO RÁPIDO
