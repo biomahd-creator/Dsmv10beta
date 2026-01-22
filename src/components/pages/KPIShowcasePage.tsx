@@ -648,6 +648,150 @@ export function KPIShowcasePage() {
           </div>
         </CardContent>
       </Card>
+
+      {/* Propiedades Detalladas */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Propiedades Detalladas</CardTitle>
+          <CardDescription>API de los componentes KPI</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <table className="w-full">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left p-2 text-foreground">Componente</th>
+                <th className="text-left p-2 text-foreground">Props</th>
+                <th className="text-left p-2 text-foreground">Tipo</th>
+                <th className="text-left p-2 text-foreground">Descripción</th>
+              </tr>
+            </thead>
+            <tbody className="text-muted-foreground text-sm">
+              <tr className="border-b border-border">
+                <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">KPICard</code></td>
+                <td className="p-2">title, value, change, icon</td>
+                <td className="p-2">string, string, number, ReactNode</td>
+                <td className="p-2">KPI básico con tendencia y porcentaje de cambio</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">KPISparklineCard</code></td>
+                <td className="p-2">data, color</td>
+                <td className="p-2">array, string</td>
+                <td className="p-2">KPI con mini gráfico de línea para tendencia histórica</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">KPIProgressCard</code></td>
+                <td className="p-2">current, target, unit</td>
+                <td className="p-2">number, number, string</td>
+                <td className="p-2">KPI con barra de progreso hacia objetivo</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">KPIMultiMetricCard</code></td>
+                <td className="p-2">metrics</td>
+                <td className="p-2">array</td>
+                <td className="p-2">KPI con múltiples métricas relacionadas agrupadas</td>
+              </tr>
+              <tr className="border-b border-border">
+                <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">KPIAlertCard</code></td>
+                <td className="p-2">threshold, current</td>
+                <td className="p-2">number, number</td>
+                <td className="p-2">KPI con estado de alerta basado en umbrales</td>
+              </tr>
+            </tbody>
+          </table>
+        </CardContent>
+      </Card>
+
+      {/* Casos de Uso */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Casos de Uso</CardTitle>
+          <CardDescription>Aplicaciones de componentes KPI en sistemas empresariales</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="p-4 border border-border rounded-lg space-y-2">
+              <h4 className="font-medium text-foreground">📊 Dashboards Ejecutivos</h4>
+              <p className="text-sm text-muted-foreground">
+                Mostrar métricas clave de negocio: ingresos, usuarios activos, conversiones
+              </p>
+            </div>
+            <div className="p-4 border border-border rounded-lg space-y-2">
+              <h4 className="font-medium text-foreground">💰 Paneles de Factoring</h4>
+              <p className="text-sm text-muted-foreground">
+                Monitorear cartera, tasas de aprobación, liquidez y operaciones pendientes
+              </p>
+            </div>
+            <div className="p-4 border border-border rounded-lg space-y-2">
+              <h4 className="font-medium text-foreground">📈 Analytics de Ventas</h4>
+              <p className="text-sm text-muted-foreground">
+                Seguimiento de objetivos de ventas, pipeline, ticket promedio y cierre de deals
+              </p>
+            </div>
+            <div className="p-4 border border-border rounded-lg space-y-2">
+              <h4 className="font-medium text-foreground">🎯 SLA Monitoring</h4>
+              <p className="text-sm text-muted-foreground">
+                Uptime del sistema, tiempos de respuesta, satisfacción del cliente con alertas
+              </p>
+            </div>
+            <div className="p-4 border border-border rounded-lg space-y-2">
+              <h4 className="font-medium text-foreground">👥 HR & People Analytics</h4>
+              <p className="text-sm text-muted-foreground">
+                Métricas de recursos humanos: rotación, contrataciones, engagement de empleados
+              </p>
+            </div>
+            <div className="p-4 border border-border rounded-lg space-y-2">
+              <h4 className="font-medium text-foreground">🚀 Product Metrics</h4>
+              <p className="text-sm text-muted-foreground">
+                Activación de usuarios, retención, feature adoption y churn rate
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Mejores Prácticas Extendidas */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Mejores Prácticas Extendidas</CardTitle>
+          <CardDescription>Recomendaciones para diseño e implementación de KPIs</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            <li className="flex items-start gap-2">
+              <span className="text-primary mt-1">✓</span>
+              <span>Muestra la métrica principal con tipografía grande (2xl) y peso bold para máxima legibilidad</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-primary mt-1">✓</span>
+              <span>Usa verde (#84cc16) para tendencias positivas y rojo para negativas - consistente con convenciones UX</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-primary mt-1">✓</span>
+              <span>Incluye siempre período de comparación (vs last month, vs last year) para contexto temporal</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-primary mt-1">✓</span>
+              <span>Agrega sparklines para KPIs críticos - permiten detectar tendencias y anomalías rápidamente</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-primary mt-1">✓</span>
+              <span>Implementa estados de alerta (success, warning, danger) con bordes de color para métricas con umbrales</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-primary mt-1">✓</span>
+              <span>Mantén grids consistentes de 2, 3 o 4 columnas según resolución - evita layouts desequilibrados</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-primary mt-1">✓</span>
+              <span>Formatea números con separadores de miles y decimales apropiados según locale del usuario</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-primary mt-1">✓</span>
+              <span>Actualiza datos en tiempo real con websockets o polling cada 30-60 segundos para dashboards live</span>
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
     </div>
   );
 }

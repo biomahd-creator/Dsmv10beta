@@ -447,6 +447,94 @@ app.post("/api/invoices", async (req, res) => {
               </div>
             </CardContent>
           </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Propiedades Detalladas</CardTitle>
+              <CardDescription>API completa del componente InvoiceGenerator</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-foreground">Prop</th>
+                    <th className="text-left p-2 text-foreground">Tipo</th>
+                    <th className="text-left p-2 text-foreground">Default</th>
+                    <th className="text-left p-2 text-foreground">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground text-sm">
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">initialData</code></td>
+                    <td className="p-2">InvoiceData</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Datos iniciales para precargar el formulario</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">onGenerate</code></td>
+                    <td className="p-2">(data: InvoiceData) =&gt; void</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Callback al generar/guardar la factura</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">showPreview</code></td>
+                    <td className="p-2">boolean</td>
+                    <td className="p-2">true</td>
+                    <td className="p-2">Muestra vista previa en tiempo real</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">className</code></td>
+                    <td className="p-2">string</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Clases CSS adicionales</td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo del Invoice Generator</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Valida campos requeridos (clientName, items, total) antes de permitir generación de PDF</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Genera números de factura únicos y consecutivos automáticamente desde el backend</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Guarda facturas en base de datos antes de permitir descarga PDF para trazabilidad completa</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Implementa autosave cada 30 segundos en localStorage para prevenir pérdida de datos</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa formato de moneda localizado con <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">Intl.NumberFormat</code> según país del cliente</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Calcula IVA correctamente según la legislación local (19% en Chile, 21% en España, etc.)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Incluye términos y condiciones claras para evitar disputas de pago</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Permite plantillas de items frecuentes para agilizar creación de facturas recurrentes</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
         </>
       }
     />

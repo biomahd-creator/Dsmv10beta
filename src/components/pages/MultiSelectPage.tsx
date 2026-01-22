@@ -284,6 +284,98 @@ export function MyForm() {
               </ul>
             </CardContent>
           </Card>
+
+          {/* Casos de Uso */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Casos de Uso</CardTitle>
+              <CardDescription>Aplicaciones comunes del componente Multi Select</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🏷️ Tags y Categorías</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Asignar múltiples etiquetas o categorías a artículos, productos o contenido
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🔍 Filtros Avanzados</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Permitir filtrado por múltiples criterios en búsquedas o listados
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">👥 Asignación de Usuarios</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Asignar tareas o proyectos a múltiples miembros del equipo
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📧 Destinatarios de Email</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Seleccionar múltiples destinatarios para correos o notificaciones
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🛠️ Configuración de Permisos</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Seleccionar múltiples permisos o roles para usuarios y grupos
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📊 Selección de Métricas</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Elegir múltiples KPIs o métricas para visualizar en dashboards
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Mejores Prácticas */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo de Multi Select</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Limita la lista de opciones a menos de 50 items para mejor rendimiento y UX</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa labels descriptivos y únicos en cada opción para evitar confusión</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Muestra los elementos seleccionados como badges debajo del input para visibilidad clara</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Incluye búsqueda cuando hay más de 10 opciones disponibles</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">placeholder</code> descriptivo del contenido ("Selecciona países", "Elige frameworks")</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Valida que al menos 1 elemento esté seleccionado si el campo es requerido</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Provee feedback visual cuando se alcanza un límite máximo de selecciones (si aplica)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Ordena las opciones alfabéticamente o por relevancia para facilitar la búsqueda</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
         </>
       }
     />

@@ -156,7 +156,7 @@ export function ColorPickerDemo() {
               <CardDescription>Aplicaciones del Color Picker</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-3 gap-4">
                 <div className="p-4 border rounded-lg space-y-2 bg-card">
                   <h4 className="font-medium">🎨 Personalización de Temas</h4>
                   <p className="text-sm text-muted-foreground">
@@ -184,6 +184,20 @@ export function ColorPickerDemo() {
                     Editores de contenido, generadores de reportes, firmas personalizadas
                   </p>
                 </div>
+                
+                <div className="p-4 border rounded-lg space-y-2 bg-card">
+                  <h4 className="font-medium">📝 Estado de Facturas</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Codificación visual por colores para estados de documentos financieros
+                  </p>
+                </div>
+                
+                <div className="p-4 border rounded-lg space-y-2 bg-card">
+                  <h4 className="font-medium">👤 Identificación de Usuarios</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Avatares y badges de color para diferenciar roles o equipos
+                  </p>
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -197,23 +211,35 @@ export function ColorPickerDemo() {
               <ul className="text-muted-foreground space-y-2 text-sm">
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-1">✓</span>
-                  <span>Incluye colores corporativos en los presets para mantener consistencia</span>
+                  <span>Incluye colores corporativos en los presets para mantener consistencia de marca</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-1">✓</span>
-                  <span>Valida el formato HEX antes de aplicar el color</span>
+                  <span>Valida el formato HEX (#RRGGBB) antes de aplicar el color seleccionado</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-1">✓</span>
-                  <span>Muestra una preview grande del color seleccionado</span>
+                  <span>Muestra una preview grande del color seleccionado para verificación visual</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-1">✓</span>
-                  <span>Considera contraste de accesibilidad (WCAG AA mínimo)</span>
+                  <span>Considera contraste de accesibilidad (WCAG AA mínimo) para texto sobre el color elegido</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-1">✓</span>
-                  <span>Proporciona feedback visual cuando el color cambia</span>
+                  <span>Proporciona feedback visual instantáneo cuando el color cambia</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa el picker nativo del navegador para mayor compatibilidad y familiaridad</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Permite input manual HEX para usuarios avanzados que conocen códigos exactos</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Organiza presets por categoría (corporativos, neutrales, saturados) para navegación rápida</span>
                 </li>
               </ul>
             </CardContent>

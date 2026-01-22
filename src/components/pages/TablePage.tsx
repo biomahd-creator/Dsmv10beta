@@ -4,6 +4,7 @@ import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { MoreHorizontal, ArrowUpDown, Download, FileText } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../ui/dropdown-menu";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
 export function TablePage() {
   const invoices = [
@@ -599,6 +600,160 @@ function MyTable() {
 </Table>`
         }
       ]}
+      
+      additionalSections={
+        <>
+          <Card>
+            <CardHeader>
+              <CardTitle>Propiedades</CardTitle>
+              <CardDescription>API completa del componente Table</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-foreground">Componente</th>
+                    <th className="text-left p-2 text-foreground">Elemento HTML</th>
+                    <th className="text-left p-2 text-foreground">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground text-sm">
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">Table</code></td>
+                    <td className="p-2">table</td>
+                    <td className="p-2">Contenedor principal de la tabla con estilos base</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">TableHeader</code></td>
+                    <td className="p-2">thead</td>
+                    <td className="p-2">Encabezado de la tabla con estilo diferenciado</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">TableBody</code></td>
+                    <td className="p-2">tbody</td>
+                    <td className="p-2">Cuerpo de la tabla conteniendo las filas de datos</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">TableFooter</code></td>
+                    <td className="p-2">tfoot</td>
+                    <td className="p-2">Pie de tabla para totales o resúmenes</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">TableRow</code></td>
+                    <td className="p-2">tr</td>
+                    <td className="p-2">Fila de la tabla con hover y estados interactivos</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">TableHead</code></td>
+                    <td className="p-2">th</td>
+                    <td className="p-2">Celda de encabezado con tipografía bold</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">TableCell</code></td>
+                    <td className="p-2">td</td>
+                    <td className="p-2">Celda de datos con padding consistente</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">TableCaption</code></td>
+                    <td className="p-2">caption</td>
+                    <td className="p-2">Título descriptivo de la tabla (accesibilidad)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Casos de Uso</CardTitle>
+              <CardDescription>Aplicaciones comunes del componente Table</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📊 Listas de Datos</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Facturas, clientes, productos con información estructurada en columnas
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">👥 Gestión de Usuarios</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Listas de usuarios con roles, estados y acciones contextuales
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">💰 Reportes Financieros</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Transacciones, balances y estados de cuenta con totales
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📁 Administración de Archivos</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Documentos con tipo, tamaño, fecha y acciones de descarga
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📈 Dashboards de Métricas</h4>
+                  <p className="text-sm text-muted-foreground">
+                    KPIs y métricas con comparaciones y variaciones porcentuales
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🗓️ Historial de Actividades</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Logs de auditoría con timestamps, usuarios y acciones realizadas
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo de Table</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">TableCaption</code> para describir el contenido de la tabla (mejora accesibilidad)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Aplica <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">text-right</code> en TableHead y TableCell para columnas numéricas</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">hover:bg-muted/50</code> en TableRow para feedback visual interactivo</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Implementa estados vacíos con <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">colSpan</code> para mostrar mensajes cuando no hay datos</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Para tablas largas, envuelve en un div con <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">overflow-x-auto</code> o usa ScrollArea</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa Badge para estados visuales (Activo/Inactivo, Pagado/Pendiente) en lugar de texto plano</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Combina con DropdownMenu para acciones contextuales sin saturar la interfaz</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Aplica <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">font-medium</code> en la primera columna para jerarquía visual</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </>
+      }
     />
   );
 }

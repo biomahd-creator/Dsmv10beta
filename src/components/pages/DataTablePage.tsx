@@ -11,6 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import { DataTable } from "../advanced/DataTable";
 import { MoreHorizontal, ArrowUpDown, CheckCircle, Clock, AlertCircle, XCircle, Circle } from "lucide-react";
 import { ProgressBar } from "../business/ProgressBar";
@@ -275,6 +276,145 @@ export function DataTableDemo() {
           code: `// Features are built-in to the DataTable component.`
         }
       ]}
+
+      additionalSections={
+        <>
+          <Card>
+            <CardHeader>
+              <CardTitle>Propiedades Detalladas</CardTitle>
+              <CardDescription>API completa del componente DataTable</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-foreground">Prop</th>
+                    <th className="text-left p-2 text-foreground">Tipo</th>
+                    <th className="text-left p-2 text-foreground">Default</th>
+                    <th className="text-left p-2 text-foreground">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground text-sm">
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">columns *</code></td>
+                    <td className="p-2">ColumnDef&lt;TData&gt;[]</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Definición de columnas según TanStack Table API</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">data *</code></td>
+                    <td className="p-2">TData[]</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Array de datos a mostrar en la tabla</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">searchKey</code></td>
+                    <td className="p-2">string</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Clave del objeto por la cual filtrar (ej: "email", "client")</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">searchPlaceholder</code></td>
+                    <td className="p-2">string</td>
+                    <td className="p-2">"Buscar..."</td>
+                    <td className="p-2">Placeholder del input de búsqueda</td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Casos de Uso</CardTitle>
+              <CardDescription>Aplicaciones comunes del componente DataTable</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📋 Listado de Facturas</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Gestión de facturas con estados, filtrado por cliente y acciones masivas
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">👥 Gestión de Usuarios</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Tabla de usuarios con roles, permisos, búsqueda y edición inline
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📦 Inventario de Productos</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Catálogo de productos con stock, precios, sorting y paginación
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📊 Reportes y Analytics</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Visualización de métricas, KPIs y datos financieros tabulados
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🎫 Sistema de Tickets</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Gestión de tickets con estados, prioridades y asignaciones
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">💼 CRM Empresarial</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Listado de clientes, oportunidades de venta y seguimiento
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo del DataTable</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Define <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">accessorKey</code> o <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">accessorFn</code> para cada columna con datos dinámicos</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">enableSorting: false</code> en columnas de acciones o checkboxes para evitar sorting innecesario</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Implementa celdas personalizadas con Badges, ProgressBars o Dropdowns para enriquecer la UX</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">searchKey</code> para habilitar filtrado rápido en columnas clave (nombres, emails, IDs)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Configura paginación adecuada: 10-25 filas por página para UX óptima en datasets grandes</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Incluye columna de selección con checkboxes cuando necesites acciones masivas (delete, export, etc.)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Formatea valores numéricos (monedas, porcentajes) con Intl.NumberFormat para localización correcta</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Asegura responsive design con scroll horizontal en mobile y colapso de columnas secundarias si es necesario</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </>
+      }
     />
   );
 }

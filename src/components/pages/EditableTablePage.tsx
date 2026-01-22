@@ -224,6 +224,96 @@ export function EditableTable() {
               </div>
             </CardContent>
           </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Casos de Uso</CardTitle>
+              <CardDescription>Aplicaciones comunes de Editable Table</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📊 Gestión de Facturas</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Editar montos, fechas y estados de facturas directamente en la tabla
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📦 Inventarios</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Actualizar stock, precios y categorías de productos inline
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">👥 Base de Contactos</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Modificar nombres, emails y teléfonos sin diálogos externos
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">💰 Presupuestos</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Ajustar cantidades, precios unitarios y calcular totales en tiempo real
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📋 Tareas y Proyectos</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Cambiar estados, asignados y fechas límite con quick editing
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">⚙️ Configuraciones</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Ajustar parámetros del sistema con edición inline de valores
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo de Editable Table</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Indica visualmente qué celdas son editables con hover (ej: cambiar cursor a pointer)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Incluye botones de guardar/cancelar explícitos para confirmar o descartar cambios</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Valida datos antes de guardar - muestra errores inline si formato es inválido</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa tipos de input apropiados: <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">type="number"</code> para montos, Calendar para fechas</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Implementa auto-save con debounce (300ms) para evitar múltiples llamadas API</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Permite edición por teclado: Enter para guardar, Escape para cancelar, Tab para siguiente celda</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Muestra feedback de guardado exitoso con toast o animación temporal en la celda</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Previene edición simultánea de múltiples celdas - solo una celda editable a la vez</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
         </>
       }
     />

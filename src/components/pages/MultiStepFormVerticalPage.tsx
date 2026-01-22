@@ -154,7 +154,7 @@ export function MultiStepFormVerticalPage() {
       badges={[{ text: "Patterns", variant: "secondary" }]}
       previewComponent={<MultiStepFormVerticalDemo />}
       codeBlock={`import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -260,32 +260,138 @@ export function VerticalForm() {
               <CardTitle>Casos de Uso</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-3 gap-4">
                 <div className="p-4 border rounded-lg bg-card">
-                  <h4 className="font-medium mb-2">Registro de Usuarios</h4>
+                  <h4 className="font-medium mb-2">📝 Registro de Usuarios</h4>
                   <p className="text-sm text-muted-foreground">
                     Formularios de registro con múltiples secciones
                   </p>
                 </div>
                 <div className="p-4 border rounded-lg bg-card">
-                  <h4 className="font-medium mb-2">Solicitudes</h4>
+                  <h4 className="font-medium mb-2">💼 Solicitudes</h4>
                   <p className="text-sm text-muted-foreground">
                     Aplicaciones para créditos, seguros, o servicios
                   </p>
                 </div>
                 <div className="p-4 border rounded-lg bg-card">
-                  <h4 className="font-medium mb-2">Checkout</h4>
+                  <h4 className="font-medium mb-2">🛒 Checkout</h4>
                   <p className="text-sm text-muted-foreground">
                     Proceso de compra dividido en etapas
                   </p>
                 </div>
                 <div className="p-4 border rounded-lg bg-card">
-                  <h4 className="font-medium mb-2">Perfiles Completos</h4>
+                  <h4 className="font-medium mb-2">👤 Perfiles Completos</h4>
                   <p className="text-sm text-muted-foreground">
                     Creación de perfiles con múltiples categorías de información
                   </p>
                 </div>
+                <div className="p-4 border rounded-lg bg-card">
+                  <h4 className="font-medium mb-2">🏦 Onboarding Bancario</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Proceso de apertura de cuentas con validación de identidad y documentos
+                  </p>
+                </div>
+                <div className="p-4 border rounded-lg bg-card">
+                  <h4 className="font-medium mb-2">📊 Encuestas Complejas</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Cuestionarios largos divididos en secciones temáticas
+                  </p>
+                </div>
               </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Propiedades Detalladas</CardTitle>
+              <CardDescription>API del componente Multi-Step Form Vertical</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-foreground">Prop</th>
+                    <th className="text-left p-2 text-foreground">Tipo</th>
+                    <th className="text-left p-2 text-foreground">Default</th>
+                    <th className="text-left p-2 text-foreground">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground text-sm">
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">steps</code></td>
+                    <td className="p-2">Step[]</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Array de pasos con id, title y description</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">currentStep</code></td>
+                    <td className="p-2">number</td>
+                    <td className="p-2">1</td>
+                    <td className="p-2">Paso activo actual del formulario</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">onStepChange</code></td>
+                    <td className="p-2">(step: number) =&gt; void</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Callback al cambiar de paso</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">onComplete</code></td>
+                    <td className="p-2">() =&gt; void</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Callback al completar todos los pasos</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">allowSkip</code></td>
+                    <td className="p-2">boolean</td>
+                    <td className="p-2">false</td>
+                    <td className="p-2">Permite saltar pasos sin completar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para Multi-Step Form Vertical</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa layout vertical para formularios de más de 4 pasos - mejora la navegación visual</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Muestra iconos de check en pasos completados y números en pasos pendientes para claridad</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Incluye descripción breve bajo cada título de paso para dar contexto adicional</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Valida cada paso antes de permitir avanzar - deshabilita botón "Siguiente" si hay errores</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Permite regresar a pasos anteriores para editar - nunca bloquees navegación hacia atrás</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Guarda progreso automáticamente en localStorage para evitar pérdida de datos</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>En mobile, convierte stepper vertical en horizontal collapse para mejor uso del viewport</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Agrupa campos relacionados lógicamente en cada paso - máximo 5-7 campos por pantalla</span>
+                </li>
+              </ul>
             </CardContent>
           </Card>
         </>

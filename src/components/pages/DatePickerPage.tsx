@@ -6,6 +6,8 @@ import { Calendar as CalendarIcon } from "lucide-react";
 import { cn } from "../ui/utils";
 import { format, addDays } from "date-fns";
 import { useState } from "react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 
 export function DatePickerPage() {
   const [date, setDate] = useState<Date>();
@@ -197,6 +199,163 @@ export function DateRangePickerDemo() {
 `
         }
       ]}
+      
+      additionalSections={
+        <>
+          <Card>
+            <CardHeader>
+              <CardTitle>Propiedades</CardTitle>
+              <CardDescription>API completa del componente DatePicker</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-foreground">Prop</th>
+                    <th className="text-left p-2 text-foreground">Tipo</th>
+                    <th className="text-left p-2 text-foreground">Default</th>
+                    <th className="text-left p-2 text-foreground">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground text-sm">
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">mode</code></td>
+                    <td className="p-2">"single" | "range"</td>
+                    <td className="p-2">"single"</td>
+                    <td className="p-2">Modo de selección: fecha única o rango</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">selected</code></td>
+                    <td className="p-2">Date | DateRange</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Fecha o rango seleccionado (controlado)</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">onSelect</code></td>
+                    <td className="p-2">(date) =&gt; void</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Callback al seleccionar fecha</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">disabled</code></td>
+                    <td className="p-2">Date[] | function</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Fechas deshabilitadas o función de validación</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">fromDate</code></td>
+                    <td className="p-2">Date</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Fecha mínima seleccionable</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">toDate</code></td>
+                    <td className="p-2">Date</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Fecha máxima seleccionable</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">numberOfMonths</code></td>
+                    <td className="p-2">number</td>
+                    <td className="p-2">1</td>
+                    <td className="p-2">Número de meses a mostrar (útil para rangos)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Casos de Uso</CardTitle>
+              <CardDescription>Aplicaciones comunes del componente DatePicker</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📅 Reservas y Citas</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Selección de fecha para agendar reuniones, citas médicas o reservas
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📊 Filtros de Reportes</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Rangos de fechas para filtrar datos en dashboards y reportes
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">✈️ Viajes y Estancias</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Selección de check-in y check-out para hoteles o vuelos
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📆 Planificación de Eventos</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Configuración de fechas de inicio y fin para eventos o proyectos
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🎂 Fecha de Nacimiento</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Formularios de registro con restricción de edad mínima
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">💼 Gestión de Facturas</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Fechas de emisión, vencimiento y pago de documentos financieros
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo de DatePicker</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">mode="range"</code> con <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">numberOfMonths=2</code> para rangos de fechas visuales</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Implementa <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">fromDate</code> y <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">toDate</code> para restringir fechas válidas según contexto</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">format()</code> de date-fns para mostrar fechas en formato localizado legible</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Combina con Popover para UX no intrusiva - el calendario se muestra solo cuando es necesario</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Aplica <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">initialFocus</code> en Calendar para keyboard accessibility inmediata</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">disabled</code> como función para validación compleja (ej: solo días laborales)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Muestra placeholder "Selecciona una fecha" cuando no hay valor seleccionado para claridad</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Incluye icono CalendarIcon en el trigger para indicar visualmente que es un date picker</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </>
+      }
     />
   );
 }

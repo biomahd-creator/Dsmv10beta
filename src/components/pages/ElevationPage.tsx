@@ -104,6 +104,145 @@ export function ElevationPage() {
 </Card>`
         }
       ]}
+      
+      additionalSections={
+        <>
+          <Card>
+            <CardHeader>
+              <CardTitle>Propiedades del Sistema de Elevación</CardTitle>
+              <CardDescription>Clases CSS de utilidad para sombras y profundidad</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-foreground">Clase CSS</th>
+                    <th className="text-left p-2 text-foreground">Nivel</th>
+                    <th className="text-left p-2 text-foreground">Uso Recomendado</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground text-sm">
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">shadow-elevation-1</code></td>
+                    <td className="p-2">Nivel 1</td>
+                    <td className="p-2">Cards y elementos ligeramente elevados sobre la superficie base</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">shadow-elevation-2</code></td>
+                    <td className="p-2">Nivel 2</td>
+                    <td className="p-2">Elementos con hover o en estado activo</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">shadow-elevation-3</code></td>
+                    <td className="p-2">Nivel 3</td>
+                    <td className="p-2">Dropdowns, popovers, y elementos flotantes</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">shadow-elevation-4</code></td>
+                    <td className="p-2">Nivel 4</td>
+                    <td className="p-2">Modals, dialogs, y elementos de máxima jerarquía</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">elevation-{1-4}</code></td>
+                    <td className="p-2">Shorthand</td>
+                    <td className="p-2">Alias para shadow-elevation-{1-4}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Casos de Uso</CardTitle>
+              <CardDescription>Aplicaciones del sistema de elevación</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🎴 Cards Interactivas</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Usa elevation-1 en estado normal y elevation-3 en hover para feedback visual
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📋 Menús Flotantes</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Dropdowns, select, combobox con elevation-3 para separar del contenido base
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">💬 Modales y Dialogs</h4>
+                  <p className="text-sm text-muted-foreground">
+                    elevation-4 para máxima jerarquía visual sobre overlay oscuro
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">⚙️ Toolbars Flotantes</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Barras de herramientas sticky con elevation-2 para distinguir del contenido scroll
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🔔 Notificaciones y Toasts</h4>
+                  <p className="text-sm text-muted-foreground">
+                    elevation-3 para toasts que flotan sobre toda la UI temporalmente
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📊 Dashboards y KPIs</h4>
+                  <p className="text-sm text-muted-foreground">
+                    elevation-1 para cards de métricas que se agrupan visualmente
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo del sistema de elevación</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa elevation-1 como base para cards - mantén jerarquía visual clara y consistente</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Incrementa elevation en hover/focus (+2 niveles) para feedback interactivo táctil</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Reserva elevation-4 para elementos críticos como modales - evita sobreuso</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Combina con transition-shadow duration-300 para animaciones suaves de elevación</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Elimina border cuando uses elevation (border-none) para evitar doble contorno visual</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Las sombras se adaptan automáticamente a dark mode - no necesitas clases condicionales</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa elevation-3 para popovers y tooltips - separa del contenido sin ser intrusivo</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Mantén consistencia: mismo nivel de elevation para elementos del mismo tipo en toda la app</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </>
+      }
     />
   );
 }

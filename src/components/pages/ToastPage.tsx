@@ -453,6 +453,96 @@ toast("Archivo eliminado", {
               </ul>
             </CardContent>
           </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Casos de Uso</CardTitle>
+              <CardDescription>Aplicaciones comunes del componente Toast</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">✅ Confirmación de Acciones</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Confirmar que una acción se completó: "Cambios guardados", "Factura creada"
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">❌ Manejo de Errores</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Notificar errores: "Error al conectar con el servidor", "Formulario inválido"
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">⏳ Operaciones Asíncronas</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Mostrar progreso con loading/promise: "Subiendo archivo...", "Procesando pago"
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">ℹ️ Información Contextual</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Alertas informativas: "Nueva actualización disponible", "Sesión por expirar"
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">⚠️ Advertencias</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Alertas de precaución: "Esta acción no se puede deshacer", "Campos faltantes"
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">↩️ Acciones Reversibles</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Toasts con botón "Deshacer" para recuperar acciones destructivas
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo de Toast</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">toast.success()</code> solo para confirmaciones positivas, no para cada acción</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Mantén mensajes cortos y claros - máximo 2 líneas de texto descriptivo</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Configura <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">duration</code> según importancia: 3s (éxito), 5s (error/warning), infinito (crítico)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">toast.promise()</code> para operaciones asíncronas con estados loading/success/error automáticos</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Incluye botón de acción solo cuando sea relevante (ej: "Deshacer", "Ver detalles")</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Para errores críticos que requieren atención, usa Dialog en lugar de Toast</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Actualiza toasts existentes con <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">id</code> en lugar de crear múltiples toasts</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Evita mostrar más de 3 toasts simultáneamente para no saturar la interfaz</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
         </>
       }
     />

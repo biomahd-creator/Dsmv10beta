@@ -236,4 +236,4 @@ Antes de generar código, consultar:
 1. `/guidelines/TOKENS.md` - Clases semánticas disponibles
 2. `/guidelines/EXAMPLES.md` - Ejemplos correctos de dark mode
 3. `/guidelines/COMPONENTS.md` - Componentes disponibles
-4. `/DARK_MODE_AUDIT_COMPLETE_FINAL.md` - Guía completa de dark mode
+4. `/styles/globals.css` - Variables CSS y clases personalizadas

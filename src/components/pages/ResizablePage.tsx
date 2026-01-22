@@ -2,6 +2,7 @@ import { ComponentShowcase } from "../ui/component-showcase";
 import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "../ui/resizable";
 import { Separator } from "../ui/separator";
 import { Badge } from "../ui/badge";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
 export function ResizablePage() {
   return (
@@ -245,95 +246,164 @@ function MyComponent() {
         },
       ]}
       
-      additionalContent={
-        <div className="space-y-8">
-          <Separator />
-          
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Casos de Uso</h3>
-            <div className="grid md:grid-cols-3 gap-4">
-              <div className="border rounded-lg p-4 space-y-2">
-                <h4 className="font-medium">Code Editor</h4>
-                <p className="text-sm text-muted-foreground">
-                  Navegador de archivos + Editor + Panel de propiedades
-                </p>
+      additionalSections={
+        <>
+          <Card>
+            <CardHeader>
+              <CardTitle>Propiedades</CardTitle>
+              <CardDescription>API completa del componente Resizable</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-foreground">Componente / Prop</th>
+                    <th className="text-left p-2 text-foreground">Tipo</th>
+                    <th className="text-left p-2 text-foreground">Default</th>
+                    <th className="text-left p-2 text-foreground">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground text-sm">
+                  <tr className="border-b border-border bg-muted/30">
+                    <td className="p-2 font-semibold" colSpan={4}>ResizablePanelGroup</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">direction</code></td>
+                    <td className="p-2">"horizontal" | "vertical"</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Dirección del layout de paneles</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">className</code></td>
+                    <td className="p-2">string</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Clases CSS adicionales</td>
+                  </tr>
+                  <tr className="border-b border-border bg-muted/30">
+                    <td className="p-2 font-semibold" colSpan={4}>ResizablePanel</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">defaultSize</code></td>
+                    <td className="p-2">number</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Tamaño inicial del panel (porcentaje)</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">minSize</code></td>
+                    <td className="p-2">number</td>
+                    <td className="p-2">10</td>
+                    <td className="p-2">Tamaño mínimo permitido</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">maxSize</code></td>
+                    <td className="p-2">number</td>
+                    <td className="p-2">100</td>
+                    <td className="p-2">Tamaño máximo permitido</td>
+                  </tr>
+                  <tr className="border-b border-border bg-muted/30">
+                    <td className="p-2 font-semibold" colSpan={4}>ResizableHandle</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">withHandle</code></td>
+                    <td className="p-2">boolean</td>
+                    <td className="p-2">false</td>
+                    <td className="p-2">Muestra handle visual arrastrable</td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Casos de Uso</CardTitle>
+              <CardDescription>Aplicaciones comunes del componente Resizable</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">💻 Code Editors / IDEs</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Navegador de archivos + Editor + Panel de propiedades redimensionables
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📧 Email Clients</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Lista de emails + Vista previa + Panel de detalles ajustables
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📊 Dashboards Complejos</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Sidebar + Gráficas + Widgets personalizables por el usuario
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🎨 Herramientas de Diseño</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Canvas central + Panel de capas + Propiedades editables
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📁 File Managers</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Árbol de directorios + Vista de archivos + Panel de preview
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🗂️ Admin Panels</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Navegación lateral + Contenido principal + Panel de acciones
+                  </p>
+                </div>
               </div>
-              <div className="border rounded-lg p-4 space-y-2">
-                <h4 className="font-medium">Email Client</h4>
-                <p className="text-sm text-muted-foreground">
-                  Lista de emails + Vista previa + Detalles
-                </p>
-              </div>
-              <div className="border rounded-lg p-4 space-y-2">
-                <h4 className="font-medium">Dashboard</h4>
-                <p className="text-sm text-muted-foreground">
-                  Sidebar + Gráficas + Widgets personalizables
-                </p>
-              </div>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
 
-          <Separator />
-
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="border rounded-lg p-6 space-y-4">
-              <h3 className="font-semibold">✅ Características</h3>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <p>• Tamaños mínimos y máximos configurables</p>
-                <p>• Handles visuales opcionales</p>
-                <p>• Anidación de layouts horizontal y vertical</p>
-                <p>• Persistencia de tamaños (localStorage)</p>
-              </div>
-            </div>
-            <div className="border rounded-lg p-6 space-y-4">
-              <h3 className="font-semibold">⌨️ Teclado</h3>
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <p>• Focus en handles con Tab</p>
-                <p>• Flechas para redimensionar con teclado</p>
-                <p>• Enter para activar/desactivar resize</p>
-                <p>• Completamente accesible</p>
-              </div>
-            </div>
-          </div>
-
-          <Separator />
-
-          <div className="bg-primary/5 border-primary/20 border rounded-lg p-6 space-y-4">
-            <h3 className="font-semibold">♿ Accesibilidad</h3>
-            <div className="space-y-2 text-sm">
-              <p>✓ <strong>Keyboard navigation</strong> - Redimensionar con teclado</p>
-              <p>✓ <strong>ARIA labels</strong> - Roles y labels apropiados</p>
-              <p>✓ <strong>Focus visible</strong> - Indicadores claros de foco</p>
-              <p>✓ <strong>Screen reader</strong> - Anuncia cambios de tamaño</p>
-            </div>
-          </div>
-
-          <Separator />
-
-          <div className="bg-muted/50 border rounded-lg p-6 space-y-4">
-            <h3 className="font-semibold">Composición</h3>
-            <p className="text-sm text-muted-foreground">Componentes shadcn/ui utilizados</p>
-            <div className="space-y-2">
-              <p className="text-sm">
-                <Badge variant="outline" className="mr-2">ResizablePanelGroup</Badge>
-                Contenedor de paneles
-              </p>
-              <p className="text-sm">
-                <Badge variant="outline" className="mr-2">ResizablePanel</Badge>
-                Panel individual redimensionable
-              </p>
-              <p className="text-sm">
-                <Badge variant="outline" className="mr-2">ResizableHandle</Badge>
-                Handle arrastrable entre paneles
-              </p>
-              <Separator className="my-3" />
-              <p className="text-xs text-muted-foreground">
-                Basado en react-resizable-panels. Ideal para aplicaciones con layouts complejos
-                como IDEs, dashboards y herramientas de productividad.
-              </p>
-            </div>
-          </div>
-        </div>
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo de Resizable</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Define <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">minSize</code> y <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">maxSize</code> para evitar que paneles se colapsen o expandan demasiado</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">withHandle</code> para hacer handles visibles y más fáciles de agarrar</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Suma de defaultSize de todos los paneles debe ser aproximadamente 100</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Para layouts complejos, anida ResizablePanelGroup en diferentes direcciones</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Establece min-h o min-w en el PanelGroup para evitar colapsos visuales</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Considera persistir tamaños de paneles en localStorage para guardar preferencias del usuario</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Permite navegación por teclado (Tab + flechas) para accesibilidad completa</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Evita más de 4 paneles visibles simultáneamente para mantener claridad visual</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </>
       }
     />
   );

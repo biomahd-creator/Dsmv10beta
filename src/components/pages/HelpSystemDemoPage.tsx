@@ -6,7 +6,7 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
-import { Card, CardContent } from "../ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../ui/card";
 import { useState } from "react";
 
 export function HelpSystemDemoPage() {
@@ -164,6 +164,151 @@ import { vinculacionTourSteps } from "@/components/help/tourSteps";
           code: `// The Help Center is typically a modal or dedicated page accessed via the global header.`
         }
       ]}
+
+      additionalSections={
+        <>
+          <Card>
+            <CardHeader>
+              <CardTitle>Propiedades de ContextualHelp</CardTitle>
+              <CardDescription>API completa del componente de ayuda contextual</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-foreground">Prop</th>
+                    <th className="text-left p-2 text-foreground">Tipo</th>
+                    <th className="text-left p-2 text-foreground">Default</th>
+                    <th className="text-left p-2 text-foreground">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground text-sm">
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">quickHelp</code></td>
+                    <td className="p-2">string</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Texto corto mostrado en tooltip al hacer hover</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">detailedHelp</code></td>
+                    <td className="p-2">string | ReactNode</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Contenido detallado mostrado en popover al hacer click</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">title</code></td>
+                    <td className="p-2">string</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Título del popover de ayuda detallada</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">tooltipOnly</code></td>
+                    <td className="p-2">boolean</td>
+                    <td className="p-2">false</td>
+                    <td className="p-2">Si true, solo muestra tooltip (icono ⓘ)</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">popoverOnly</code></td>
+                    <td className="p-2">boolean</td>
+                    <td className="p-2">false</td>
+                    <td className="p-2">Si true, solo muestra popover (icono ?)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Casos de Uso</CardTitle>
+              <CardDescription>Aplicaciones del sistema de ayuda contextual</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📝 Formularios Complejos</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Ayuda contextual en campos de formularios con terminología técnica o reglas de validación específicas
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🏦 Onboarding Bancario</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Product Tours guiados para procesos de vinculación y apertura de cuentas empresariales
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">💼 Dashboards Empresariales</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Tooltips en KPIs y métricas complejas para explicar cálculos y fórmulas
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">⚙️ Configuraciones Avanzadas</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Popovers con documentación detallada en opciones técnicas y configuraciones del sistema
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🎓 Funcionalidades Nuevas</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Tours interactivos para presentar features nuevos a usuarios existentes
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🔐 Campos de Seguridad</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Ayuda contextual en campos sensibles explicando requisitos de seguridad y mejores prácticas
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para diseño de sistemas de ayuda efectivos</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa tooltip para hints rápidos (max 1-2 líneas) y popover para explicaciones detalladas con ejemplos</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Coloca ContextualHelp siempre a la derecha del Label - nunca antes ni debajo del campo</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Limita Product Tours a 4-6 pasos máximo - tours largos tienen tasas de abandono altas</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Haz tours opcionales y repetibles - nunca fuerces al usuario a completarlos en primer acceso</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa iconos consistentes: ⓘ para tooltips simples, ? para popovers con documentación extensa</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Prioriza ayuda contextual en campos obligatorios con validaciones complejas o formato específico</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Incluye ejemplos concretos en detailedHelp - "Ejemplo: 900123456" es más útil que texto abstracto</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Vincula tours a IDs de elementos DOM estables - usa id="tour-step-name" para robustez</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </>
+      }
     />
   );
 }

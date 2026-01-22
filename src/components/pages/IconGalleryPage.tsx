@@ -1,6 +1,7 @@
 import { ComponentShowcase } from "../ui/component-showcase";
 import { Badge } from "../ui/badge";
 import { Input } from "../ui/input";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../ui/card";
 import { Search } from "lucide-react";
 import { useState, useMemo } from "react";
 import {
@@ -345,6 +346,151 @@ export function IconDemo() {
 <Star className="h-8 w-8" />`
         }
       ]}
+      
+      additionalSections={
+        <>
+          <Card>
+            <CardHeader>
+              <CardTitle>Propiedades de Lucide Icons</CardTitle>
+              <CardDescription>API de iconos lucide-react</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-foreground">Prop</th>
+                    <th className="text-left p-2 text-foreground">Tipo</th>
+                    <th className="text-left p-2 text-foreground">Default</th>
+                    <th className="text-left p-2 text-foreground">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground text-sm">
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">size</code></td>
+                    <td className="p-2">number | string</td>
+                    <td className="p-2">24</td>
+                    <td className="p-2">Tamaño del icono en píxeles (width y height)</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">strokeWidth</code></td>
+                    <td className="p-2">number</td>
+                    <td className="p-2">2</td>
+                    <td className="p-2">Grosor del trazo SVG</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">color</code></td>
+                    <td className="p-2">string</td>
+                    <td className="p-2">currentColor</td>
+                    <td className="p-2">Color del icono (hex, rgb o CSS variable)</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">className</code></td>
+                    <td className="p-2">string</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Clases CSS de Tailwind para tamaño, color, etc.</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">absoluteStrokeWidth</code></td>
+                    <td className="p-2">boolean</td>
+                    <td className="p-2">false</td>
+                    <td className="p-2">Mantiene strokeWidth absoluto al escalar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Casos de Uso</CardTitle>
+              <CardDescription>Aplicaciones de iconos lucide-react</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🎨 UI Components</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Botones, inputs, menús y navegación con iconografía consistente
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📊 Dashboards</h4>
+                  <p className="text-sm text-muted-foreground">
+                    KPIs, gráficos y estadísticas con iconos descriptivos para métricas
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🗂️ Navegación</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Sidebars, breadcrumbs y menús de navegación principal
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">✅ Estados y Feedback</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Success, error, warning, info en alerts, toasts y notifications
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">⚙️ Toolbars</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Barras de herramientas con acciones rápidas: editar, eliminar, compartir
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📱 Mobile Actions</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Bottom navigation, FAB buttons y menús de acción en mobile
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo de iconos lucide</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa clases Tailwind h-4 w-4 (16px), h-5 w-5 (20px), h-6 w-6 (24px) en lugar de prop size para consistencia</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Aplica text-muted-foreground para iconos secundarios y text-primary para acciones principales</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Mantén strokeWidth=2 como default - solo cambia para iconos muy pequeños (&lt;16px) o grandes (&gt;32px)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa iconos semánticos: CheckCircle para success, AlertTriangle para warning, XCircle para error</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Acompaña iconos con labels en botones principales - mejora accesibilidad y comprensión</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Para iconos decorativos, usa aria-hidden="true" - para iconos funcionales, añade aria-label descriptivo</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Importa solo los iconos que usas - tree-shaking automático reduce bundle size significativamente</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Mantén consistencia de tamaños: h-4 para inline text, h-5 para botones, h-6 para headers y navigation</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </>
+      }
     />
   );
 }

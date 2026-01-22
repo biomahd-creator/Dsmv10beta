@@ -195,6 +195,145 @@ export function ExportDemo() {
 </Button>`
         }
       ]}
+
+      additionalSections={
+        <>
+          <Card>
+            <CardHeader>
+              <CardTitle>Propiedades Detalladas</CardTitle>
+              <CardDescription>API completa del componente ExportData</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-foreground">Prop</th>
+                    <th className="text-left p-2 text-foreground">Tipo</th>
+                    <th className="text-left p-2 text-foreground">Default</th>
+                    <th className="text-left p-2 text-foreground">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground text-sm">
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">data *</code></td>
+                    <td className="p-2">Record&lt;string, any&gt;[]</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Array de objetos a exportar</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">columns</code></td>
+                    <td className="p-2">ExportColumn[]</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Definición de columnas con labels y formato personalizado</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">defaultFilename</code></td>
+                    <td className="p-2">string</td>
+                    <td className="p-2">"export"</td>
+                    <td className="p-2">Nombre sugerido del archivo (sin extensión)</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">onExport</code></td>
+                    <td className="p-2">(format, config) =&gt; void</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Callback al confirmar exportación con formato y config</td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Casos de Uso</CardTitle>
+              <CardDescription>Aplicaciones comunes de ExportData</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📊 Exportar Reportes</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Generar reportes financieros en CSV/Excel para análisis offline
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📋 Listados de Facturas</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Exportar facturas con estados, montos y clientes para contabilidad
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📈 Datos de Analytics</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Exportar métricas, KPIs y estadísticas para presentaciones
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">👥 Base de Datos de Clientes</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Extraer listados de clientes con datos de contacto y segmentación
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📦 Inventarios</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Exportar catálogo de productos con stock, precios y categorías
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🗃️ Backups de Datos</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Crear copias de seguridad de datos críticos en formato legible
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo de ExportData</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Define <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">columns</code> con labels descriptivos para mejorar legibilidad del archivo exportado</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa funciones <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">format</code> para convertir valores (fechas, montos, porcentajes)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Limita datasets grandes a máximo 10,000 filas para evitar bloqueos del navegador</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Incluye timestamp en el filename para identificar versiones (ej: facturas-2024-01-22)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Para datasets masivos (&gt;10k filas), implementa exportación server-side con streaming</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Permite seleccionar solo columnas relevantes para reducir tamaño del archivo</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Muestra preview de las primeras 5 filas antes de exportar para validación</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa CSV para compatibilidad universal, Excel (XLSX) para formato rico con estilos</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </>
+      }
     />
   );
 }

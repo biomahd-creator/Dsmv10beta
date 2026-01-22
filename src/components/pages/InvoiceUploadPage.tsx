@@ -296,6 +296,147 @@ export function InvoiceUpload() {
               </div>
             </CardContent>
           </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Propiedades Detalladas</CardTitle>
+              <CardDescription>API completa del componente InvoiceUpload</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-foreground">Prop</th>
+                    <th className="text-left p-2 text-foreground">Tipo</th>
+                    <th className="text-left p-2 text-foreground">Default</th>
+                    <th className="text-left p-2 text-foreground">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground text-sm">
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">onUpload</code></td>
+                    <td className="p-2">(files: File[]) =&gt; void</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Callback al subir archivos XML/PDF</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">onCufeSubmit</code></td>
+                    <td className="p-2">(cufe: string) =&gt; void</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Callback al enviar código CUFE manual</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">maxFiles</code></td>
+                    <td className="p-2">number</td>
+                    <td className="p-2">10</td>
+                    <td className="p-2">Número máximo de archivos por carga</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">acceptedFormats</code></td>
+                    <td className="p-2">string[]</td>
+                    <td className="p-2">["xml", "pdf"]</td>
+                    <td className="p-2">Formatos de archivo permitidos</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">showHistory</code></td>
+                    <td className="p-2">boolean</td>
+                    <td className="p-2">true</td>
+                    <td className="p-2">Muestra historial de cargas previas</td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Casos de Uso</CardTitle>
+              <CardDescription>Aplicaciones del componente InvoiceUpload</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📄 Facturación Electrónica</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Carga de facturas electrónicas XML desde DIAN para validación y procesamiento
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">💰 Solicitudes de Factoring</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Upload masivo de facturas para evaluación crediticia y adelanto de cartera
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🔍 Validación CUFE</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Ingreso manual de códigos únicos para verificar autenticidad ante DIAN
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📊 Análisis de Cartera</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Procesamiento masivo de XML para extraer datos y generar reportes
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🏦 Conciliación Bancaria</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Carga de facturas electrónicas para cuadrar con pagos recibidos
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📋 Auditoría Tributaria</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Importación de documentos fiscales para revisión y cumplimiento normativo
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo del Invoice Upload</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Valida formato XML contra esquema XSD de DIAN antes de procesar datos fiscales</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Verifica firma digital del archivo XML para garantizar autenticidad del documento</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Implementa límite de tamaño por archivo (5MB recomendado) para prevenir sobrecarga del servidor</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Muestra preview de datos extraídos (NIT, monto, fecha) antes de confirmar la carga</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Guarda historial de cargas con timestamp y usuario para trazabilidad completa</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Consulta API de DIAN en tiempo real para validar CUFE y evitar facturas duplicadas o fraudulentas</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Procesa archivos de forma asíncrona y muestra progreso con ProgressBar para UX óptima</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Maneja errores de parsing XML con mensajes claros indicando línea y tipo de error encontrado</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
         </>
       }
     />

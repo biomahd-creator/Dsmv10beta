@@ -375,6 +375,49 @@ export function MyForm() {
               </div>
             </CardContent>
           </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo del Textarea Autoresize</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Configura <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">minRows</code> entre 2-4 para dar espacio inicial suficiente sin desperdiciar viewport</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Limita <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">maxRows</code> a 10-15 máximo - muy alto puede romper layout en móviles</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Muestra contador de caracteres si hay límite (ej: "240 / 500 caracteres")</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa placeholder descriptivo que explique qué tipo de contenido se espera</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Para formularios críticos, implementa autosave cada 30 segundos para prevenir pérdida de datos</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Combina con Label para accesibilidad - siempre asocia un label visible al textarea</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Valida contenido antes de submit - detecta texto vacío o solo espacios en blanco</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>En mobile, considera usar <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">maxRows</code> más bajo (5-8) para no ocupar toda la pantalla</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
         </>
       }
     />

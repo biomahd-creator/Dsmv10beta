@@ -229,6 +229,49 @@ export function MyEditor() {
               </div>
             </CardContent>
           </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo del Rich Text Editor</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Sanitiza el HTML generado antes de almacenarlo en base de datos para prevenir XSS</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">min-h-[300px]</code> para garantizar espacio suficiente de edición</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Implementa autosave cada 30 segundos para prevenir pérdida de contenido</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Valida que el contenido no esté vacío antes de guardar (detectar solo tags HTML sin texto)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Limita funcionalidades del editor según contexto (no permitir imágenes en comentarios)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Muestra contador de caracteres cuando existan límites (ej: 5000 caracteres máximo)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Provee placeholder descriptivo para guiar al usuario sobre qué tipo de contenido crear</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Combina con preview en tiempo real para que el usuario vea cómo se renderizará el HTML</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
         </>
       }
     />

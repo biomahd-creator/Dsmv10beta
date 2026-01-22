@@ -2,14 +2,14 @@
 
 ## 1. SHADCN/UI (OFFICIAL)
 Base del sistema. Ubicados en `/components/ui/`.
-**Total**: 43 componentes implementados.
+**Total**: 48 componentes implementados.
 
 - **Actions**: Button, Toggle, Toggle Group.
-- **Forms**: Input, Select, Checkbox, Radio, Switch, Slider, Form, Label.
-- **Navigation**: Tabs, Breadcrumb, Command, Dropdown, Pagination, Menubar.
-- **Data Display**: Card, Table, Badge, Avatar, Separator.
-- **Feedback**: Alert, Dialog, Popover, Tooltip, Progress, Sheet, Toast (Sonner).
-- **Layout**: Accordion, Carousel, Collapsible, ScrollArea, Resizable.
+- **Forms**: Input, Select, Checkbox, Radio, Switch, Slider, Form, Label, Textarea, Input OTP, Input File, Calendar, Date Picker.
+- **Navigation**: Tabs, Breadcrumb, Command, Dropdown Menu, Pagination, Menubar, Navigation Menu, Context Menu.
+- **Data Display**: Card, Table, Badge, Avatar, Separator, Hover Card, Aspect Ratio.
+- **Feedback**: Alert, Alert Dialog, Dialog, Popover, Tooltip, Progress, Sheet, Toast (Sonner), Drawer, Skeleton.
+- **Layout**: Accordion, Carousel, Collapsible, Scroll Area, Resizable, Sidebar.
 
 ## 2. ATOMIC DESIGN
 Componentes jerárquicos en `/components/atomic/`.

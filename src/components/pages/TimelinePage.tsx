@@ -239,6 +239,66 @@ export function ActivityTimeline() {
         <>
           <Card>
             <CardHeader>
+              <CardTitle>Propiedades</CardTitle>
+              <CardDescription>API completa de los componentes Timeline</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-foreground">Componente</th>
+                    <th className="text-left p-2 text-foreground">Props</th>
+                    <th className="text-left p-2 text-foreground">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground text-sm">
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">Timeline</code></td>
+                    <td className="p-2">children, className</td>
+                    <td className="p-2">Contenedor principal del timeline</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">TimelineItem</code></td>
+                    <td className="p-2">children, className</td>
+                    <td className="p-2">Item individual del timeline</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">TimelineIcon</code></td>
+                    <td className="p-2">children, className</td>
+                    <td className="p-2">Círculo con icono (lucide-react)</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">TimelineConnector</code></td>
+                    <td className="p-2">className</td>
+                    <td className="p-2">Línea vertical conectora</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">TimelineContent</code></td>
+                    <td className="p-2">children, className</td>
+                    <td className="p-2">Contenido del evento</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">TimelineTitle</code></td>
+                    <td className="p-2">children, className</td>
+                    <td className="p-2">Título del evento</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">TimelineDescription</code></td>
+                    <td className="p-2">children, className</td>
+                    <td className="p-2">Descripción detallada</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">TimelineTime</code></td>
+                    <td className="p-2">children, className</td>
+                    <td className="p-2">Timestamp del evento</td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
               <CardTitle>Componentes de Timeline</CardTitle>
               <CardDescription>Estructura y subcomponentes disponibles</CardDescription>
             </CardHeader>
@@ -394,6 +454,49 @@ export function ActivityTimeline() {
                   </p>
                 </div>
               </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo de Timeline</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Ordena eventos de más reciente a más antiguo para activity feeds (cronología inversa)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa iconos distintivos y colores consistentes para cada tipo de evento (UserPlus, GitCommit, etc.)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Incluye timestamps claros relativos ("2 hours ago") o absolutos ("Oct 23, 18:00")</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Omite <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">TimelineConnector</code> en el último item para terminar el flujo visual</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Añade contenido enriquecido como badges, avatars o comentarios para más contexto</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Diferencia estados con colores de iconos (verde=completado, gris=pendiente, rojo=error)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Agrupa eventos por fecha o categoría cuando haya muchos items para mejor navegación</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa ScrollArea para timelines largos y considera lazy loading para mejor rendimiento</span>
+                </li>
+              </ul>
             </CardContent>
           </Card>
         </>

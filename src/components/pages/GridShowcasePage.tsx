@@ -215,11 +215,154 @@ export function GridStatsDemo() {
               ))}
             </GridShowcase>
           ),
-          code: `<GridShowcase columns="auto">
-  {/* Cards will wrap automatically */}
-</GridShowcase>`
+          code: `<GridShowcase columns="auto">\n  {/* Cards will wrap automatically */}\n</GridShowcase>`
         }
       ]}
+      
+      additionalSections={
+        <>
+          <Card>
+            <CardHeader>
+              <CardTitle>Propiedades Detalladas</CardTitle>
+              <CardDescription>API completa del componente GridShowcase</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-foreground">Prop</th>
+                    <th className="text-left p-2 text-foreground">Tipo</th>
+                    <th className="text-left p-2 text-foreground">Default</th>
+                    <th className="text-left p-2 text-foreground">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground text-sm">
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">columns</code></td>
+                    <td className="p-2">1 | 2 | 3 | 4 | 'auto'</td>
+                    <td className="p-2">2</td>
+                    <td className="p-2">Número de columnas en desktop. 'auto' usa grid-auto-fit con min 280px</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">gap</code></td>
+                    <td className="p-2">'sm' | 'md' | 'lg'</td>
+                    <td className="p-2">'md'</td>
+                    <td className="p-2">Espaciado entre elementos: sm=16px, md=24px, lg=32px</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">children</code></td>
+                    <td className="p-2">ReactNode</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Elementos del grid (Cards, divs, etc.)</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">className</code></td>
+                    <td className="p-2">string</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Clases CSS adicionales para el contenedor grid</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">responsive</code></td>
+                    <td className="p-2">boolean</td>
+                    <td className="p-2">true</td>
+                    <td className="p-2">Activa breakpoints mobile (1 col) y tablet (2 col)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Casos de Uso</CardTitle>
+              <CardDescription>Aplicaciones del GridShowcase en diseño responsivo</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📊 KPI Dashboards</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Grid de 4 columnas para métricas clave con cards de estadísticas
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🛍️ Catálogos de Productos</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Grid de 3 columnas para listados de productos o servicios con imágenes
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📝 Formularios Divididos</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Grid de 2 columnas para separar secciones de formularios largos
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">👥 Grids de Usuarios</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Listado de perfiles de equipo o directorio con auto-fit responsive
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📰 Blog y Noticias</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Grid de 3 columnas para artículos con preview de imágenes y extractos
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">⚙️ Configuraciones</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Grid de 2 columnas para panels de configuración divididos por categorías
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo de GridShowcase</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa columns=4 para dashboards KPI, columns=3 para catálogos y columns=2 para formularios divididos</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Aprovecha columns="auto" para grids flexibles que se adaptan automáticamente al viewport</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Mantén gap='md' como default (24px) - usa 'sm' para grids densos y 'lg' para layouts espaciados</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Combina con elevation-1 en Cards para jerarquía visual clara sin bordes intrusivos</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>El componente colapsa automáticamente a 1 columna en mobile (&lt;768px) para UX óptima</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Evita grids de más de 4 columnas - en desktop se vuelven difíciles de escanear</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa min-height consistente en Cards dentro del grid para alineación visual uniforme</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Combina con Skeleton placeholders para estados de carga manteniendo el layout estable</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </>
+      }
     />
   );
 }

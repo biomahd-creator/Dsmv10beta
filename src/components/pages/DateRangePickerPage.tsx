@@ -4,6 +4,7 @@ import { Badge } from "../ui/badge";
 import { useState } from "react";
 import { DateRange } from "react-day-picker@8.10.1";
 import { format } from "date-fns";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
 export function DateRangePickerPage() {
   const [range1, setRange1] = useState<DateRange | undefined>();
@@ -137,6 +138,157 @@ export function DateRangePickerDemo() {
 />`
         }
       ]}
+      
+      additionalSections={
+        <>
+          <Card>
+            <CardHeader>
+              <CardTitle>Propiedades</CardTitle>
+              <CardDescription>API completa del componente DateRangePicker</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-foreground">Prop</th>
+                    <th className="text-left p-2 text-foreground">Tipo</th>
+                    <th className="text-left p-2 text-foreground">Default</th>
+                    <th className="text-left p-2 text-foreground">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground text-sm">
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">dateRange</code></td>
+                    <td className="p-2">DateRange | undefined</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">El rango de fechas seleccionado actualmente (from/to)</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">onDateRangeChange</code></td>
+                    <td className="p-2">(range: DateRange | undefined) =&gt; void</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Callback ejecutado cuando cambia la selección</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">placeholder</code></td>
+                    <td className="p-2">string</td>
+                    <td className="p-2">"Selecciona un rango..."</td>
+                    <td className="p-2">Texto a mostrar cuando no hay selección</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">disabled</code></td>
+                    <td className="p-2">boolean</td>
+                    <td className="p-2">false</td>
+                    <td className="p-2">Deshabilita la interacción con el picker</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">className</code></td>
+                    <td className="p-2">string</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Clases CSS adicionales para el contenedor</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">numberOfMonths</code></td>
+                    <td className="p-2">number</td>
+                    <td className="p-2">2</td>
+                    <td className="p-2">Número de meses a mostrar en el calendario</td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Casos de Uso</CardTitle>
+              <CardDescription>Aplicaciones comunes del componente DateRangePicker</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📊 Filtros de Reportes</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Seleccionar período para generar reportes financieros o de gestión
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📈 Análisis de Datos</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Comparar métricas entre dos períodos de tiempo específicos
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">✈️ Reservas y Viajes</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Selección de fechas de inicio y fin para reservas de hotel o vuelos
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">💼 Gestión de Facturas</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Filtrar facturas por rango de fechas de emisión o vencimiento
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📅 Planificación de Eventos</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Definir período de duración de proyectos o campañas
+                  </p>
+                </div>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🔍 Búsqueda Histórica</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Buscar transacciones, logs o eventos en un rango temporal
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo de DateRangePicker</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Muestra <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">numberOfMonths=2</code> para facilitar selección de rangos largos</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Valida que la fecha <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">from</code> sea anterior a <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">to</code> en tu lógica de negocio</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa format() de date-fns para mostrar el rango seleccionado en formato legible localizado</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Incluye botones de "Hoy", "Esta semana", "Este mes" como atajos para rangos comunes</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Proporciona feedback visual del rango seleccionado debajo del picker</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Limita rangos demasiado largos (&gt;1 año) para evitar problemas de rendimiento en reportes</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa placeholder descriptivo del contexto ("Período del reporte", "Fechas de facturación")</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Considera guardar el rango en localStorage/URL params para persistencia entre sesiones</span>
+                </li>
+              </ul>
+            </CardContent>
+          </Card>
+        </>
+      }
     />
   );
 }

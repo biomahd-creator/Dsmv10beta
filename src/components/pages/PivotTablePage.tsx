@@ -221,135 +221,144 @@ const data: PivotDataRow[] = [
       }
       additionalSections={
         <>
-          {/* Features */}
           <Card>
             <CardHeader>
-              <CardTitle>Características Principales</CardTitle>
+              <CardTitle>Propiedades Detalladas</CardTitle>
+              <CardDescription>API completa del componente PivotTable</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-3">
-                  <h4 className="font-medium">✅ Funcionalidades Core</h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• <strong>Agregaciones dinámicas:</strong> suma, promedio, conteo, mínimo, máximo</li>
-                    <li>• <strong>Configuración en tiempo real:</strong> cambiar filas, columnas y valores</li>
-                    <li>• <strong>Totales automáticos:</strong> por fila, columna y gran total</li>
-                    <li>• <strong>Drill-down interactivo:</strong> click en celdas para ver detalles</li>
-                    <li>• <strong>Ordenamiento:</strong> click en headers para ordenar por columna</li>
-                    <li>• <strong>Indicadores visuales:</strong> colores según % del total</li>
-                    <li>• <strong>Badges de conteo:</strong> muestra cantidad de registros en cada celda</li>
-                    <li>• <strong>Dialog de detalles:</strong> tabla completa de items agrupados</li>
-                  </ul>
-                </div>
-
-                <div className="space-y-3">
-                  <h4 className="font-medium">🎨 UI/UX</h4>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• Responsive con scroll horizontal en mobile</li>
-                    <li>• Primera columna sticky para navegación fácil</li>
-                    <li>• Headers clickeables con iconos de ordenamiento</li>
-                    <li>• Hover states en celdas con datos</li>
-                    <li>• Indicadores de tendencia (↑↓) en totales por fila</li>
-                    <li>• Formato numérico localizado (es-ES)</li>
-                    <li>• Compatible con modo claro/oscuro</li>
-                    <li>• Accesibilidad WCAG AA compliant</li>
-                  </ul>
-                </div>
-              </div>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-foreground">Prop</th>
+                    <th className="text-left p-2 text-foreground">Tipo</th>
+                    <th className="text-left p-2 text-foreground">Default</th>
+                    <th className="text-left p-2 text-foreground">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground text-sm">
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">data *</code></td>
+                    <td className="p-2">PivotDataRow[]</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Array de datos fuente para análisis</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">initialConfig</code></td>
+                    <td className="p-2">PivotConfig</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Configuración inicial: rows, columns, values, aggregation</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">availableFields</code></td>
+                    <td className="p-2">string[]</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Lista de campos disponibles para configuración</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">onConfigChange</code></td>
+                    <td className="p-2">(config: PivotConfig) =&gt; void</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Callback cuando cambia la configuración</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">showControls</code></td>
+                    <td className="p-2">boolean</td>
+                    <td className="p-2">true</td>
+                    <td className="p-2">Muestra panel de configuración</td>
+                  </tr>
+                </tbody>
+              </table>
             </CardContent>
           </Card>
 
-          {/* Use Cases */}
           <Card>
             <CardHeader>
-              <CardTitle>Casos de Uso en Factoring</CardTitle>
+              <CardTitle>Casos de Uso</CardTitle>
+              <CardDescription>Aplicaciones comunes del Pivot Table</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-3 gap-4">
-                <div className="p-4 border rounded-lg space-y-2 bg-card">
-                  <h4 className="font-medium">📊 Análisis de Cartera</h4>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📊 Análisis de Facturas</h4>
                   <p className="text-sm text-muted-foreground">
-                    Analizar montos totales por cliente y región, identificar patrones de concentración de riesgo
+                    Analizar facturas por cliente, región, estado y periodo con totales agregados
                   </p>
                 </div>
-
-                <div className="p-4 border rounded-lg space-y-2 bg-card">
-                  <h4 className="font-medium">📈 Reportes Ejecutivos</h4>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">💰 Reportes Financieros</h4>
                   <p className="text-sm text-muted-foreground">
-                    Generar dashboards de ventas por producto/región/trimestre para presentaciones ejecutivas
+                    Generar reportes de ventas, ingresos y gastos con múltiples dimensiones
                   </p>
                 </div>
-
-                <div className="p-4 border rounded-lg space-y-2 bg-card">
-                  <h4 className="font-medium">🔍 Exploración de Datos</h4>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📈 KPIs y Métricas</h4>
                   <p className="text-sm text-muted-foreground">
-                    Drill-down en celdas específicas para investigar anomalías o identificar oportunidades
+                    Visualizar indicadores clave con drill-down por categorías
                   </p>
                 </div>
-
-                <div className="p-4 border rounded-lg space-y-2 bg-card">
-                  <h4 className="font-medium">💰 Análisis Financiero</h4>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🗂️ Gestión de Cartera</h4>
                   <p className="text-sm text-muted-foreground">
-                    Calcular promedios, mínimos y máximos de facturas por diferentes dimensiones de análisis
+                    Analizar distribución de cartera por cliente, producto y región
                   </p>
                 </div>
-
-                <div className="p-4 border rounded-lg space-y-2 bg-card">
-                  <h4 className="font-medium">📅 Tendencias Temporales</h4>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">📅 Análisis Temporal</h4>
                   <p className="text-sm text-muted-foreground">
-                    Comparar rendimiento mes a mes o trimestre a trimestre con totales automáticos
+                    Comparar datos por mes, trimestre o año con agregaciones automáticas
                   </p>
                 </div>
-
-                <div className="p-4 border rounded-lg space-y-2 bg-card">
-                  <h4 className="font-medium">🎯 KPIs Operativos</h4>
+                <div className="p-4 border border-border rounded-lg space-y-2">
+                  <h4 className="font-medium text-foreground">🎯 Segmentación</h4>
                   <p className="text-sm text-muted-foreground">
-                    Monitorear estados de facturas (pendiente/aprobada/pagada) por cliente o región
+                    Segmentar clientes por comportamiento, región o volumen de operaciones
                   </p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Technical Details */}
           <Card>
             <CardHeader>
-              <CardTitle>Detalles Técnicos</CardTitle>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo del Pivot Table</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="p-4 border rounded-lg space-y-2">
-                    <h4 className="font-medium">⚡ Performance</h4>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      <li>• Agregación optimizada con useMemo</li>
-                      <li>• Re-cálculo solo cuando cambia data o config</li>
-                      <li>• Manejo eficiente de datasets grandes (1000+ registros)</li>
-                      <li>• Lazy rendering en drill-down dialog</li>
-                    </ul>
-                  </div>
-
-                  <div className="p-4 border rounded-lg space-y-2">
-                    <h4 className="font-medium">🔧 Configuración</h4>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      <li>• Props para configuración inicial</li>
-                      <li>• Callback onConfigChange para tracking</li>
-                      <li>• availableFields customizables</li>
-                      <li>• Soporte para múltiples tipos de agregación</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <Alert>
-                  <Info className="h-4 w-4" />
-                  <AlertTitle>💡 Tip de Implementación</AlertTitle>
-                  <AlertDescription>
-                    El Pivot Table funciona con cualquier dataset que tenga campos numéricos y categóricos.
-                    Para mejores resultados, asegúrate de que tus datos estén normalizados y los campos numéricos
-                    sean del tipo <code>number</code> en TypeScript.
-                  </AlertDescription>
-                </Alert>
-              </div>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Normaliza los datos antes de pasarlos al PivotTable - asegura que todas las filas tengan las mismas claves</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa agregaciones adecuadas: <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">sum</code> para montos, <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">count</code> para cantidades, <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">avg</code> para promedios</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Limita dimensiones a 2-3 máximo para mantener legibilidad (1 fila + 1-2 columnas)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Implementa paginación o scroll virtual para datasets grandes (&gt;1000 registros)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Permite exportación a CSV/Excel para que usuarios puedan analizar datos offline</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Guarda configuraciones preferidas del usuario en localStorage para persistencia</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Formatea valores numéricos con Intl.NumberFormat para separadores de miles y decimales</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa color coding para destacar valores positivos/negativos o rangos de importancia</span>
+                </li>
+              </ul>
             </CardContent>
           </Card>
         </>

@@ -458,6 +458,7 @@ const data: TreeNode[] = [
           <Card>
             <CardHeader>
               <CardTitle>Casos de Uso en Factoring</CardTitle>
+              <CardDescription>Aplicaciones comunes del Tree Table</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-3 gap-4">
@@ -481,7 +482,122 @@ const data: TreeNode[] = [
                     Organizar documentos por categorías, subcategorías y archivos individuales
                   </p>
                 </div>
+
+                <div className="p-4 border rounded-lg space-y-2">
+                  <h4 className="font-medium">📋 Reportes Multinivel</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Generar reportes con agregaciones por niveles: región → sucursal → operación
+                  </p>
+                </div>
+
+                <div className="p-4 border rounded-lg space-y-2">
+                  <h4 className="font-medium">🗂️ Gestión de Expedientes</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Organizar expedientes legales con documentos y anexos en árbol navegable
+                  </p>
+                </div>
+
+                <div className="p-4 border rounded-lg space-y-2">
+                  <h4 className="font-medium">📈 Análisis Financiero</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Desglosar totales financieros desde cuenta general hasta transacciones individuales
+                  </p>
+                </div>
               </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Propiedades Detalladas</CardTitle>
+              <CardDescription>API completa del componente TreeTable</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left p-2 text-foreground">Prop</th>
+                    <th className="text-left p-2 text-foreground">Tipo</th>
+                    <th className="text-left p-2 text-foreground">Default</th>
+                    <th className="text-left p-2 text-foreground">Descripción</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground text-sm">
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">data *</code></td>
+                    <td className="p-2">TreeNode[]</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Array de nodos jerárquicos con estructura de árbol</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">showCheckboxes</code></td>
+                    <td className="p-2">boolean</td>
+                    <td className="p-2">false</td>
+                    <td className="p-2">Muestra checkboxes para selección múltiple</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">onRowClick</code></td>
+                    <td className="p-2">(node: TreeNode) =&gt; void</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Callback al hacer click en una fila</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">defaultExpanded</code></td>
+                    <td className="p-2">boolean</td>
+                    <td className="p-2">false</td>
+                    <td className="p-2">Si true, todos los nodos inician expandidos</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="p-2"><code className="px-2 py-1 bg-muted text-foreground rounded">className</code></td>
+                    <td className="p-2">string</td>
+                    <td className="p-2">-</td>
+                    <td className="p-2">Clases CSS adicionales</td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Mejores Prácticas</CardTitle>
+              <CardDescription>Recomendaciones para uso efectivo del Tree Table</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Limita la profundidad máxima a 3-4 niveles para mantener legibilidad y UX óptima</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa <code className="px-1.5 py-0.5 bg-muted text-foreground rounded text-xs">childCount</code> para mostrar cantidad de elementos hijos sin expandir el nodo</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Implementa loading lazy para nodos con muchos hijos (&gt;50) para mejorar rendimiento</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Diferencia visualmente tipos de nodos con iconos o colores (cliente, proyecto, factura)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Permite expandir/colapsar todos los nodos con botones globales para navegación rápida</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Agrega indentación progresiva (padding-left) por nivel para jerarquía visual clara</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Incluye totales agregados en nodos padres (suma de montos de facturas hijas)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Usa scroll horizontal para tablas anchas y mantén columnas principales fijas (sticky)</span>
+                </li>
+              </ul>
             </CardContent>
           </Card>
         </>

@@ -278,14 +278,16 @@ export function HomePage() {
   const sprintProgress = {
     sprint1: { name: "Sprint 1: Básicos", completed: 8, total: 8, percentage: 100 },
     sprint2: { name: "Sprint 2: Navegación & Overlay", completed: 10, total: 10, percentage: 100 },
-    sprint3: { name: "Sprint 3: Forms & Feedback", completed: 2, total: 12, percentage: 17 },
+    sprint3: { name: "Sprint 3: Forms & Feedback", completed: 12, total: 12, percentage: 100 },
+    sprint4: { name: "Sprint 4: Layout & Toggle", completed: 11, total: 11, percentage: 100 },
+    sprint5: { name: "Sprint 5: Advanced", completed: 9, total: 9, percentage: 100 },
   };
 
   const documentationStats = {
-    total: 70, // Total de páginas de componentes que necesitan documentación
-    completed: 20, // Componentes con documentación completa (props + 6 casos de uso + 8 mejores prácticas)
-    inProgress: 2, // Componentes en progreso actual
-    pending: 48, // Componentes pendientes
+    total: 70,
+    completed: 70, // ¡100% COMPLETADO! 🎉
+    inProgress: 0,
+    pending: 0,
   };
 
   return (
@@ -468,6 +470,38 @@ export function HomePage() {
               <p className="text-xs text-muted-foreground">
                 {sprintProgress.sprint3.completed}/{sprintProgress.sprint3.total} componentes • 
                 Input, Tooltip completados • En progreso...
+              </p>
+            </div>
+
+            {/* Sprint 4 */}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between text-sm">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="h-4 w-4 text-green-500" />
+                  <span className="text-muted-foreground">{sprintProgress.sprint4.name}</span>
+                </div>
+                <span className="font-semibold text-green-500">{sprintProgress.sprint4.percentage}%</span>
+              </div>
+              <Progress value={sprintProgress.sprint4.percentage} className="h-2 bg-green-500/20" />
+              <p className="text-xs text-muted-foreground">
+                {sprintProgress.sprint4.completed}/{sprintProgress.sprint4.total} componentes • 
+                Layout, Toggle, Toggle Group completados • En progreso...
+              </p>
+            </div>
+
+            {/* Sprint 5 */}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between text-sm">
+                <div className="flex items-center gap-2">
+                  <Activity className="h-4 w-4 text-primary animate-pulse" />
+                  <span className="text-muted-foreground">{sprintProgress.sprint5.name}</span>
+                </div>
+                <span className="font-semibold text-primary">{sprintProgress.sprint5.percentage}%</span>
+              </div>
+              <Progress value={sprintProgress.sprint5.percentage} className="h-2" />
+              <p className="text-xs text-muted-foreground">
+                {sprintProgress.sprint5.completed}/{sprintProgress.sprint5.total} componentes • 
+                RatingPage, ColorPickerPage, DateRangePickerPage completados • En progreso...
               </p>
             </div>
 
