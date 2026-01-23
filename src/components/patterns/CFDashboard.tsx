@@ -323,8 +323,8 @@ export function CFDashboard() {
                   <div key={index} className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <div 
-                        className="w-3 h-3 rounded-full"
-                        style={{ backgroundColor: item.color }}
+                        className="legend-indicator w-3 h-3 rounded-full"
+                        style={{ "--indicator-color": item.color } as React.CSSProperties}
                       />
                       <span className="text-sm">{item.estado}</span>
                     </div>

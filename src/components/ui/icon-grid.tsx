@@ -1,5 +1,10 @@
-import { Check, Copy } from "lucide-react";
-import { toast } from "sonner@2.0.3";
+import * as React from "react";
+import { toast } from "sonner";
+import * as Icons from "lucide-react";
+
+import { cn } from "./utils";
+import { Input } from "./input";
+import { Button } from "./button";
 
 /**
  * IconGridItem
@@ -32,7 +37,7 @@ export function IconGridItem({ name, Icon, isCopied, onCopy }: IconGridItemProps
         <Icon className="h-6 w-6" />
         {isCopied && (
           <div className="absolute -top-1 -right-1">
-            <Check className="h-3 w-3 text-green-500" />
+            <Icons.Check className="h-3 w-3 text-green-500" />
           </div>
         )}
       </div>
@@ -40,7 +45,7 @@ export function IconGridItem({ name, Icon, isCopied, onCopy }: IconGridItemProps
         {name}
       </span>
       <div className="absolute top-1 right-1 opacity-0 group-hover:opacity-100 transition-opacity">
-        <Copy className="h-3 w-3 text-muted-foreground" />
+        <Icons.Copy className="h-3 w-3 text-muted-foreground" />
       </div>
     </button>
   );

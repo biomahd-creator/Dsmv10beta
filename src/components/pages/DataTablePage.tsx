@@ -15,7 +15,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui
 import { DataTable } from "../advanced/DataTable";
 import { MoreHorizontal, ArrowUpDown, CheckCircle, Clock, AlertCircle, XCircle, Circle } from "lucide-react";
 import { ProgressBar } from "../business/ProgressBar";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 
 // Sample Data Type
 type Invoice = {

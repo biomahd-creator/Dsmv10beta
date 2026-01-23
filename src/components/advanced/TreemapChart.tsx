@@ -75,11 +75,8 @@ const CustomTreemapContent = ({
         y={y}
         width={width}
         height={height}
-        style={{
-          fill: color,
-          stroke: "#fff",
-          strokeWidth: 2,
-        }}
+        className="treemap-rect"
+        style={{ "--treemap-fill": color } as React.CSSProperties}
       />
       {width > 50 && height > 30 && (
         <>

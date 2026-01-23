@@ -1,8 +1,5 @@
-import { ComponentShowcase } from "../ui/component-showcase";
-import { DateRangePicker } from "../ui/date-range-picker";
-import { Badge } from "../ui/badge";
 import { useState } from "react";
-import { DateRange } from "react-day-picker@8.10.1";
+import { DateRange } from "react-day-picker";
 import { format } from "date-fns";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 

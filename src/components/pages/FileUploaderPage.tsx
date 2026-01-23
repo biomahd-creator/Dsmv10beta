@@ -1,7 +1,5 @@
-import { ComponentShowcase } from "../ui/component-showcase";
-import { FileUploader } from "../advanced/FileUploader";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 
 export function FileUploaderPage() {
   const handleUpload = (files: File[]) => {

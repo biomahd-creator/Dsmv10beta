@@ -1,17 +1,6 @@
-import { Card } from "../ui/card";
-import { Alert, AlertDescription, AlertTitle } from "../ui/alert";
 import { Toaster } from "../ui/sonner";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 import { Button } from "../ui/button";
-import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "../ui/alert-dialog";
-import { AlertCircle, Terminal, Info, AlertTriangle, CheckCircle, HelpCircle, Bell, Calendar as CalendarIcon, User, FileQuestion, CheckCircle2 } from "lucide-react";
-import { Label } from "../ui/label";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { Skeleton } from "../ui/skeleton";
 
 export function FeedbackSection() {
   return (

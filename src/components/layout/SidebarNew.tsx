@@ -24,7 +24,72 @@ import {
   Upload,
   ListChecks,
   Workflow,
-  TrendingUp
+  TrendingUp,
+  // Actions icons
+  ToggleLeft,
+  ToggleRight,
+  // Advanced icons
+  BarChart3,
+  PieChart,
+  Table,
+  GitBranch,
+  Download,
+  Star,
+  Type,
+  Clock,
+  List,
+  ArrowDown,
+  SeparatorHorizontal,
+  CirclePlus,
+  PanelBottom,
+  Columns,
+  ArrowLeftRight,
+  Activity,
+  AreaChart,
+  // Data Display icons
+  Square,
+  Table2,
+  Award,
+  User,
+  MousePointer,
+  Minus,
+  // Feedback icons
+  AlertCircle,
+  AlertTriangle,
+  Bell,
+  HelpCircle,
+  Loader,
+  Box,
+  SidebarOpen,
+  MessageCircle,
+  // Forms icons
+  FileUp,
+  AlignLeft,
+  Maximize2,
+  ChevronDown,
+  CheckSquare,
+  Circle,
+  SlidersHorizontal,
+  Calendar,
+  CalendarDays,
+  CalendarRange,
+  ChevronsUpDown,
+  Hash,
+  Tag,
+  // Layout icons
+  ChevronRight,
+  ChevronsDown,
+  Maximize,
+  ScrollText,
+  Sidebar as SidebarIcon,
+  // Navigation icons
+  LayoutDashboard,
+  Terminal,
+  Menu,
+  MenuSquare,
+  Navigation,
+  ChevronsRight,
+  MoreVertical
 } from "lucide-react";
 import { useState } from "react";
 import {
@@ -71,10 +136,14 @@ export type PageId =
   // Patterns
   | "invoice-generator" | "payment-form" | "editable-table" | "invoice-upload" | "business-components"
   | "stats-dashboard" | "quick-action" | "data-table-advanced" | "advanced-filter" | "approval-timeline" | "multi-step-wizard" | "multi-step-form" | "multi-step-form-vertical" | "multi-step-wizard-vertical"
+  | "empty-state" | "error-boundary"
   // Atomic
   | "atomic-atoms" | "atomic-molecules" | "atomic-organisms" | "atomic-templates" | "atomic-pages"
   // Advanced
   | "charts" | "color-picker" | "rating" | "date-range-advanced" | "file-uploader" | "rich-text-editor" | "timeline" | "data-table" | "tree-table" | "pivot-table" | "export-data" | "kpi-showcase"
+  | "virtualized-list" | "infinite-scroll" | "split-button" | "floating-action-button" | "bottom-sheet" | "masonry-grid" | "transfer-list" | "radar-chart" | "area-chart" | "org-chart"
+  // Business Components
+  | "invoice-card" | "payor-card" | "risk-indicator" | "cash-flow-projection" | "liquidity-meter" | "factoring-rate-display" | "document-verification" | "collection-timeline"
   // Data Visualization (Medium Priority)
   | "data-visualization"
   // Advanced Forms (Medium Priority)
@@ -100,81 +169,91 @@ export function SidebarNew({ activePage, onPageChange, ...props }: SidebarProps)
   const components = [
     // Actions
     { id: "button", label: "Button", icon: MousePointerClick },
-    { id: "toggle", label: "Toggle", icon: MousePointerClick },
-    { id: "toggle-group", label: "Toggle Group", icon: MousePointerClick },
+    { id: "toggle", label: "Toggle", icon: ToggleLeft },
+    { id: "toggle-group", label: "Toggle Group", icon: ToggleRight },
     
     // Advanced
-    { id: "charts", label: "Charts", icon: Sparkles },
-    { id: "data-visualization", label: "Data Visualization", new: true, icon: Sparkles },
-    { id: "advanced-forms", label: "Advanced Forms", new: true, icon: Sparkles },
-    { id: "data-table", label: "Data Table", icon: Sparkles },
-    { id: "tree-table", label: "Tree Table", icon: Sparkles },
-    { id: "pivot-table", label: "Pivot Table", icon: Sparkles },
-    { id: "export-data", label: "Export Data", icon: Sparkles },
-    { id: "color-picker", label: "Color Picker", icon: Sparkles },
-    { id: "rating", label: "Rating", icon: Sparkles },
-    { id: "file-uploader", label: "File Uploader", icon: Sparkles },
-    { id: "rich-text-editor", label: "Rich Text Editor", icon: Sparkles },
-    { id: "timeline", label: "Timeline", icon: Sparkles },
+    { id: "charts", label: "Charts", icon: BarChart3 },
+    { id: "data-visualization", label: "Data Visualization", new: true, icon: PieChart },
+    { id: "advanced-forms", label: "Advanced Forms", new: true, icon: FormInput },
+    { id: "data-table", label: "Data Table", icon: Table },
+    { id: "tree-table", label: "Tree Table", icon: GitBranch },
+    { id: "pivot-table", label: "Pivot Table", icon: Grid3x3 },
+    { id: "export-data", label: "Export Data", icon: Download },
+    { id: "color-picker", label: "Color Picker", icon: Palette },
+    { id: "rating", label: "Rating", icon: Star },
+    { id: "file-uploader", label: "File Uploader", icon: Upload },
+    { id: "rich-text-editor", label: "Rich Text Editor", icon: Type },
+    { id: "timeline", label: "Timeline", icon: Clock },
     { id: "kpi-showcase", label: "KPI Showcase", new: true, icon: TrendingUp },
+    { id: "virtualized-list", label: "Virtualized List", icon: List },
+    { id: "infinite-scroll", label: "Infinite Scroll", icon: ArrowDown },
+    { id: "split-button", label: "Split Button", icon: SeparatorHorizontal },
+    { id: "floating-action-button", label: "Floating Action Button", icon: CirclePlus },
+    { id: "bottom-sheet", label: "Bottom Sheet", icon: PanelBottom },
+    { id: "masonry-grid", label: "Masonry Grid", icon: Columns },
+    { id: "transfer-list", label: "Transfer List", icon: ArrowLeftRight },
+    { id: "radar-chart", label: "Radar Chart", icon: Activity },
+    { id: "area-chart", label: "Area Chart", icon: AreaChart },
+    { id: "org-chart", label: "Org Chart", icon: Workflow },
 
     // Data Display
-    { id: "card", label: "Card", icon: Grid3x3 },
-    { id: "table", label: "Table", icon: Grid3x3 },
-    { id: "badge", label: "Badge", icon: Grid3x3 },
-    { id: "avatar", label: "Avatar", icon: Grid3x3 },
-    { id: "hover-card", label: "Hover Card", icon: Grid3x3 },
-    { id: "separator", label: "Separator", icon: Grid3x3 },
+    { id: "card", label: "Card", icon: Square },
+    { id: "table", label: "Table", icon: Table2 },
+    { id: "badge", label: "Badge", icon: Award },
+    { id: "avatar", label: "Avatar", icon: User },
+    { id: "hover-card", label: "Hover Card", icon: MousePointer },
+    { id: "separator", label: "Separator", icon: Minus },
 
     // Feedback
-    { id: "alert", label: "Alert", icon: MessageSquare },
-    { id: "alert-dialog", label: "Alert Dialog", icon: MessageSquare },
+    { id: "alert", label: "Alert", icon: AlertCircle },
+    { id: "alert-dialog", label: "Alert Dialog", icon: AlertTriangle },
     { id: "dialog", label: "Dialog", icon: MessageSquare },
-    { id: "toast", label: "Toast (Sonner)", icon: MessageSquare },
-    { id: "tooltip", label: "Tooltip", icon: MessageSquare },
-    { id: "progress", label: "Progress", icon: MessageSquare },
-    { id: "skeleton", label: "Skeleton", icon: MessageSquare },
-    { id: "sheet", label: "Sheet", icon: MessageSquare },
-    { id: "drawer", label: "Drawer", icon: MessageSquare },
-    { id: "popover", label: "Popover", icon: MessageSquare },
+    { id: "toast", label: "Toast (Sonner)", icon: Bell },
+    { id: "tooltip", label: "Tooltip", icon: HelpCircle },
+    { id: "progress", label: "Progress", icon: Loader },
+    { id: "skeleton", label: "Skeleton", icon: Box },
+    { id: "sheet", label: "Sheet", icon: SidebarOpen },
+    { id: "drawer", label: "Drawer", icon: PanelLeft },
+    { id: "popover", label: "Popover", icon: MessageCircle },
 
     // Forms
     { id: "input", label: "Input", icon: FormInput },
-    { id: "input-file", label: "Input File", icon: FormInput },
-    { id: "textarea", label: "Textarea", icon: FormInput },
-    { id: "textarea-autoresize", label: "Textarea Autoresize", icon: FormInput },
-    { id: "select", label: "Select", icon: FormInput },
-    { id: "checkbox", label: "Checkbox", icon: FormInput },
-    { id: "radio-group", label: "Radio Group", icon: FormInput },
-    { id: "switch", label: "Switch", icon: FormInput },
-    { id: "slider", label: "Slider", icon: FormInput },
-    { id: "calendar", label: "Calendar", icon: FormInput },
-    { id: "date-picker", label: "Date Picker", icon: FormInput },
-    { id: "date-range-picker", label: "Date Range Picker", icon: FormInput },
-    { id: "combobox", label: "Combobox", icon: FormInput },
-    { id: "multi-select", label: "Multi Select", icon: FormInput },
-    { id: "form", label: "Form", icon: FormInput },
-    { id: "input-otp", label: "Input OTP", icon: FormInput },
-    { id: "label", label: "Label", icon: FormInput },
+    { id: "input-file", label: "Input File", icon: FileUp },
+    { id: "textarea", label: "Textarea", icon: AlignLeft },
+    { id: "textarea-autoresize", label: "Textarea Autoresize", icon: Maximize2 },
+    { id: "select", label: "Select", icon: ChevronDown },
+    { id: "checkbox", label: "Checkbox", icon: CheckSquare },
+    { id: "radio-group", label: "Radio Group", icon: Circle },
+    { id: "switch", label: "Switch", icon: ToggleRight },
+    { id: "slider", label: "Slider", icon: SlidersHorizontal },
+    { id: "calendar", label: "Calendar", icon: Calendar },
+    { id: "date-picker", label: "Date Picker", icon: CalendarDays },
+    { id: "date-range-picker", label: "Date Range Picker", icon: CalendarRange },
+    { id: "combobox", label: "Combobox", icon: ChevronsUpDown },
+    { id: "multi-select", label: "Multi Select", icon: ListChecks },
+    { id: "form", label: "Form", icon: FileText },
+    { id: "input-otp", label: "Input OTP", icon: Hash },
+    { id: "label", label: "Label", icon: Tag },
 
     // Layout
-    { id: "accordion", label: "Accordion", icon: LayoutGrid },
-    { id: "carousel", label: "Carousel", icon: LayoutGrid },
-    { id: "collapsible", label: "Collapsible", icon: LayoutGrid },
-    { id: "resizable", label: "Resizable", icon: LayoutGrid },
-    { id: "scroll-area", label: "Scroll Area", icon: LayoutGrid },
-    { id: "sidebar-showcase", label: "Sidebar", icon: LayoutGrid },
+    { id: "accordion", label: "Accordion", icon: ChevronRight },
+    { id: "carousel", label: "Carousel", icon: ImageIcon },
+    { id: "collapsible", label: "Collapsible", icon: ChevronsDown },
+    { id: "resizable", label: "Resizable", icon: Maximize },
+    { id: "scroll-area", label: "Scroll Area", icon: ScrollText },
+    { id: "sidebar-showcase", label: "Sidebar", icon: SidebarIcon },
     { id: "grid-showcase", label: "Grid Showcase", icon: LayoutGrid },
 
     // Navigation
-    { id: "tabs", label: "Tabs", icon: Compass },
-    { id: "breadcrumb", label: "Breadcrumb", icon: Compass },
-    { id: "command", label: "Command", icon: Compass },
-    { id: "dropdown-menu", label: "Dropdown Menu", icon: Compass },
-    { id: "menubar", label: "Menubar", icon: Compass },
-    { id: "navigation-menu", label: "Navigation Menu", icon: Compass },
-    { id: "pagination", label: "Pagination", icon: Compass },
-    { id: "context-menu", label: "Context Menu", icon: Compass },
+    { id: "tabs", label: "Tabs", icon: LayoutDashboard },
+    { id: "breadcrumb", label: "Breadcrumb", icon: ChevronRight },
+    { id: "command", label: "Command", icon: Terminal },
+    { id: "dropdown-menu", label: "Dropdown Menu", icon: Menu },
+    { id: "menubar", label: "Menubar", icon: MenuSquare },
+    { id: "navigation-menu", label: "Navigation Menu", icon: Navigation },
+    { id: "pagination", label: "Pagination", icon: ChevronsRight },
+    { id: "context-menu", label: "Context Menu", icon: MoreVertical },
   ].sort((a, b) => a.label.localeCompare(b.label));
 
   const designSystemPages: MenuItem[] = [
@@ -192,6 +271,19 @@ export function SidebarNew({ activePage, onPageChange, ...props }: SidebarProps)
     { id: "multi-step-form-vertical", label: "Multi-Step Form (Vertical)" },
     { id: "multi-step-wizard", label: "Multi-Step Wizard" },
     { id: "multi-step-wizard-vertical", label: "Multi-Step Wizard (Vertical)" },
+    { id: "empty-state", label: "Empty State" },
+    { id: "error-boundary", label: "Error Boundary" },
+  ].sort((a, b) => a.label.localeCompare(b.label));
+
+  const businessPages: MenuItem[] = [
+    { id: "invoice-card", label: "Invoice Card", new: true },
+    { id: "payor-card", label: "Payor Card", new: true },
+    { id: "risk-indicator", label: "Risk Indicator", new: true },
+    { id: "cash-flow-projection", label: "Cash Flow Projection", new: true },
+    { id: "liquidity-meter", label: "Liquidity Meter", new: true },
+    { id: "factoring-rate-display", label: "Factoring Rate", new: true },
+    { id: "document-verification", label: "Document Verification", new: true },
+    { id: "collection-timeline", label: "Collection Timeline", new: true },
   ].sort((a, b) => a.label.localeCompare(b.label));
 
   const resourcePages: MenuItem[] = [
@@ -230,6 +322,11 @@ export function SidebarNew({ activePage, onPageChange, ...props }: SidebarProps)
     ...patternsPages.map(item => ({ 
       ...item, 
       section: "Patterns", 
+      icon: Sparkles 
+    })),
+    ...businessPages.map(item => ({ 
+      ...item, 
+      section: "Business Components", 
       icon: Sparkles 
     }))
   ];
@@ -445,6 +542,38 @@ export function SidebarNew({ activePage, onPageChange, ...props }: SidebarProps)
         </SidebarGroup>
 
         <SidebarGroup>
+          <SidebarGroupLabel className="text-sidebar-foreground/90">Business Components</SidebarGroupLabel>
+          <SidebarMenu>
+            {businessPages.map((page) => (
+              <SidebarMenuItem key={page.id}>
+                <SidebarMenuButton 
+                  isActive={activePage === page.id}
+                  onClick={() => onPageChange(page.id)}
+                  tooltip={page.label}
+                >
+                  {page.id === "invoice-card" && <FileText />}
+                  {page.id === "payor-card" && <Layers />}
+                  {page.id === "risk-indicator" && <Accessibility />}
+                  {page.id === "cash-flow-projection" && <Sparkles />}
+                  {page.id === "liquidity-meter" && <Scale />}
+                  {page.id === "factoring-rate-display" && <Sparkles />}
+                  {page.id === "document-verification" && <CheckCircle />}
+                  {page.id === "collection-timeline" && <Workflow />}
+                  <span className="flex flex-1 items-center gap-2 overflow-hidden text-sidebar-foreground group-data-[active=true]/menu-button:text-sidebar-primary-foreground group-data-[active=true]/menu-button:font-medium">
+                    <span className="truncate">{page.label}</span>
+                    {page.new && (
+                      <Badge variant="default" className="shrink-0 h-4 px-1 text-xs border-none font-medium">
+                        NEW
+                      </Badge>
+                    )}
+                  </span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
+          </SidebarMenu>
+        </SidebarGroup>
+
+        <SidebarGroup>
           <SidebarGroupLabel className="text-sidebar-foreground/90">Verificación</SidebarGroupLabel>
           <SidebarMenu>
             {specialPages.map((page) => (
@@ -471,7 +600,7 @@ export function SidebarNew({ activePage, onPageChange, ...props }: SidebarProps)
          <div className="p-4 bg-sidebar-accent/10 rounded-lg m-2 group-data-[collapsible=icon]:hidden">
             <div className="flex items-center gap-2 text-sidebar-foreground/90 text-xs">
               <div className="h-2 w-2 rounded-full bg-primary animate-pulse" />
-              <span>105 Componentes</span>
+              <span>189 Componentes</span>
             </div>
          </div>
          

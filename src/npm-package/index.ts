@@ -1,10 +1,17 @@
 // Financio Design System - NPM Package Entry Point
-// Version: 5.4.0
+// Version: 5.5.0
+// Total Components: 189
+// Updated: January 23, 2026
 
 // ============================================================================
 // UTILITIES
 // ============================================================================
 export { cn } from '../lib/utils';
+
+// ============================================================================
+// HOOKS
+// ============================================================================
+export { useIsMobile } from '../components/ui/use-mobile';
 
 // ============================================================================
 // UI COMPONENTS (shadcn/ui)
@@ -35,6 +42,9 @@ export {
   AlertDialogAction,
   AlertDialogCancel,
 } from '../components/ui/alert-dialog';
+
+// Aspect Ratio
+export { AspectRatio } from '../components/ui/aspect-ratio';
 
 // Avatar
 export { Avatar, AvatarImage, AvatarFallback } from '../components/ui/avatar';
@@ -78,8 +88,21 @@ export {
   CarouselNext,
 } from '../components/ui/carousel';
 
+// Chart
+export {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  ChartLegend,
+  ChartLegendContent,
+  ChartStyle,
+} from '../components/ui/chart';
+
 // Checkbox
 export { Checkbox } from '../components/ui/checkbox';
+
+// Code Block
+export { CodeBlock } from '../components/ui/code-block';
 
 // Collapsible
 export {
@@ -101,6 +124,9 @@ export {
   CommandSeparator,
 } from '../components/ui/command';
 
+// Component Showcase (utility component for DSM)
+export { ComponentShowcase } from '../components/ui/component-showcase';
+
 // Context Menu
 export {
   ContextMenu,
@@ -119,6 +145,9 @@ export {
   ContextMenuSubTrigger,
   ContextMenuRadioGroup,
 } from '../components/ui/context-menu';
+
+// Date Range Picker
+export { DateRangePicker } from '../components/ui/date-range-picker';
 
 // Dialog
 export {
@@ -179,6 +208,9 @@ export {
   FormField,
 } from '../components/ui/form';
 
+// Grid Showcase (utility component for DSM)
+export { GridShowcase } from '../components/ui/grid-showcase';
+
 // Hover Card
 export {
   HoverCard,
@@ -186,8 +218,14 @@ export {
   HoverCardContent,
 } from '../components/ui/hover-card';
 
+// Icon Grid (utility component for DSM)
+export { IconGrid } from '../components/ui/icon-grid';
+
 // Input
 export { Input } from '../components/ui/input';
+
+// Input File
+export { InputFile } from '../components/ui/input-file';
 
 // Input OTP
 export {
@@ -219,6 +257,9 @@ export {
   MenubarSub,
   MenubarShortcut,
 } from '../components/ui/menubar';
+
+// Multi Select
+export { MultiSelect } from '../components/ui/multi-select';
 
 // Navigation Menu
 export {
@@ -294,6 +335,34 @@ export {
   SheetDescription,
 } from '../components/ui/sheet';
 
+// Sidebar
+export {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupAction,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
+  SidebarInput,
+  SidebarInset,
+  SidebarMenu,
+  SidebarMenuAction,
+  SidebarMenuBadge,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarMenuSkeleton,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
+  SidebarProvider,
+  SidebarRail,
+  SidebarSeparator,
+  SidebarTrigger,
+  useSidebar,
+} from '../components/ui/sidebar';
+
 // Skeleton
 export { Skeleton } from '../components/ui/skeleton';
 
@@ -324,19 +393,8 @@ export { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/ui/tabs'
 // Textarea
 export { Textarea } from '../components/ui/textarea';
 
-// Toast
-export {
-  Toast,
-  ToastAction,
-  ToastClose,
-  ToastDescription,
-  ToastProvider,
-  ToastTitle,
-  ToastViewport,
-} from '../components/ui/toast';
-
-export { Toaster as ToastToaster } from '../components/ui/toaster';
-export { useToast } from '../components/ui/use-toast';
+// Textarea Autoresize
+export { TextareaAutoresize } from '../components/ui/textarea-autoresize';
 
 // Toggle
 export { Toggle, toggleVariants } from '../components/ui/toggle';
@@ -359,51 +417,157 @@ export {
 // ADVANCED COMPONENTS
 // ============================================================================
 
-export { AmountInput } from '../components/advanced/AmountInput';
-export { CurrencyBadge } from '../components/advanced/CurrencyBadge';
-export { CurrencySelector } from '../components/advanced/CurrencySelector';
+export { AreaChart } from '../components/advanced/AreaChart';
+export { BottomSheet } from '../components/advanced/BottomSheet';
+export { ChartShowcase } from '../components/advanced/ChartShowcase';
+export { ColorPicker } from '../components/advanced/ColorPicker';
+export { Combobox } from '../components/advanced/Combobox';
+export { ConditionalForm } from '../components/advanced/ConditionalForm';
 export { DataTable } from '../components/advanced/DataTable';
-export { DateRangePicker } from '../components/advanced/DateRangePicker';
-export { DocViewer } from '../components/advanced/DocViewer';
-export { FileUpload } from '../components/advanced/FileUpload';
-export { FormWizard } from '../components/advanced/FormWizard';
-export { InvoiceCard } from '../components/advanced/InvoiceCard';
-export { InvoiceStatus } from '../components/advanced/InvoiceStatus';
-export { KPICard } from '../components/advanced/KPICard';
-export { NotificationBadge } from '../components/advanced/NotificationBadge';
-export { PasswordInput } from '../components/advanced/PasswordInput';
-export { PhoneInput } from '../components/advanced/PhoneInput';
-export { RateDisplay } from '../components/advanced/RateDisplay';
-export { RiskBadge } from '../components/advanced/RiskBadge';
-export { SearchBar } from '../components/advanced/SearchBar';
-export { StatCard } from '../components/advanced/StatCard';
-export { StatusBadge } from '../components/advanced/StatusBadge';
+export { DatePickerWithPresets } from '../components/advanced/DatePickerWithPresets';
+export { DateRangePicker as DateRangePickerAdvanced } from '../components/advanced/DateRangePicker';
+export { ExportData } from '../components/advanced/ExportData';
+export { FileUploader } from '../components/advanced/FileUploader';
+export { FloatingActionButton } from '../components/advanced/FloatingActionButton';
+export { FormBuilder } from '../components/advanced/FormBuilder';
+export { FunnelChart } from '../components/advanced/FunnelChart';
+export { GanttChart } from '../components/advanced/GanttChart';
+export { GaugeChart } from '../components/advanced/GaugeChart';
+export { Heatmap } from '../components/advanced/Heatmap';
+export { InfiniteScroll } from '../components/advanced/InfiniteScroll';
+export { InvoiceGenerator } from '../components/advanced/InvoiceGenerator';
+export { KanbanBoard } from '../components/advanced/KanbanBoard';
+export { MasonryGrid } from '../components/advanced/MasonryGrid';
+export { MultiColumnForm } from '../components/advanced/MultiColumnForm';
+export { MultiSelect as MultiSelectAdvanced } from '../components/advanced/MultiSelect';
+export { OrgChart } from '../components/advanced/OrgChart';
+export { PivotTable } from '../components/advanced/PivotTable';
+export { RadarChart } from '../components/advanced/RadarChart';
+export { RatingComponent } from '../components/advanced/RatingComponent';
+export { RichTextEditor } from '../components/advanced/RichTextEditor';
+export { SankeyDiagram } from '../components/advanced/SankeyDiagram';
+export { Sparkline } from '../components/advanced/Sparkline';
+export { SplitButton } from '../components/advanced/SplitButton';
 export { StepIndicator } from '../components/advanced/StepIndicator';
 export { Timeline } from '../components/advanced/Timeline';
-
-// ============================================================================
-// PATTERN COMPONENTS
-// ============================================================================
-
-export { EmptyState } from '../components/patterns/EmptyState';
-export { ErrorState } from '../components/patterns/ErrorState';
-export { LoadingState } from '../components/patterns/LoadingState';
-export { PageHeader } from '../components/patterns/PageHeader';
+export { TransferList } from '../components/advanced/TransferList';
+export { TreeTable } from '../components/advanced/TreeTable';
+export { TreemapChart } from '../components/advanced/TreemapChart';
+export { VirtualizedList } from '../components/advanced/VirtualizedList';
 
 // ============================================================================
 // BUSINESS COMPONENTS
 // ============================================================================
 
+export { AuditLogViewer } from '../components/business/AuditLogViewer';
+export { BarChart } from '../components/business/BarChart';
+export { BookingCalendar } from '../components/business/BookingCalendar';
+export { CashFlowProjection } from '../components/business/CashFlowProjection';
+export { ChartLegendItem } from '../components/business/ChartLegendItem';
+export { CollectionTimeline } from '../components/business/CollectionTimeline';
+export { ColorBox } from '../components/business/ColorBox';
+export { ColorPresetButton } from '../components/business/ColorPresetButton';
 export { ColorSwatch } from '../components/business/ColorSwatch';
-export { ComponentCard } from '../components/business/ComponentCard';
+export { ContactForm } from '../components/business/ContactForm';
+export { ContrastPreview } from '../components/business/ContrastPreview';
+export { DocumentVerificationStatus } from '../components/business/DocumentVerificationStatus';
+export { FactoringRateDisplay } from '../components/business/FactoringRateDisplay';
+export { GridSystemPreview } from '../components/business/GridSystemPreview';
+export { InvoiceCard } from '../components/business/InvoiceCard';
+export { LiquidityMeter } from '../components/business/LiquidityMeter';
+export { OperationDetailCard } from '../components/business/OperationDetailCard';
+export { PayorCard } from '../components/business/PayorCard';
+export { ProgressBar } from '../components/business/ProgressBar';
+export { RiskIndicator } from '../components/business/RiskIndicator';
+export { SpacingPreview } from '../components/business/SpacingPreview';
+export { StatusAlert } from '../components/business/StatusAlert';
+export { StatusKPICard } from '../components/business/StatusKPICard';
+export { TestimonialsCarousel } from '../components/business/TestimonialsCarousel';
 
 // ============================================================================
-// TYPE EXPORTS
+// PATTERNS
 // ============================================================================
 
-// Re-export commonly used types
-export type { ButtonProps } from '../components/ui/button';
-export type { CardProps } from '../components/ui/card';
-export type { InputProps } from '../components/ui/input';
-export type { LabelProps } from '../components/ui/label';
-export type { BadgeProps } from '../components/ui/badge';
+export { ActivityFeed } from '../components/patterns/ActivityFeed';
+export { AdminPortal } from '../components/patterns/AdminPortal';
+export { AdvancedFilterPanel } from '../components/patterns/AdvancedFilterPanel';
+export { ApprovalFlowWizard } from '../components/patterns/ApprovalFlowWizard';
+export { ApprovalTimeline } from '../components/patterns/ApprovalTimeline';
+export { CFDashboard } from '../components/patterns/CFDashboard';
+export { CommentThread } from '../components/patterns/CommentThread';
+export { ComparisonTable } from '../components/patterns/ComparisonTable';
+export { CupoValidator } from '../components/patterns/CupoValidator';
+export { DataTableAdvanced } from '../components/patterns/DataTableAdvanced';
+export { EditableTable } from '../components/patterns/EditableTable';
+export { EmptyState } from '../components/patterns/EmptyState';
+export { ErrorBoundary } from '../components/patterns/ErrorBoundary';
+export { FactoringCalculator } from '../components/patterns/FactoringCalculator';
+export { FactoringDashboard } from '../components/patterns/FactoringDashboard';
+export { LiquidityCalculator } from '../components/patterns/LiquidityCalculator';
+export { LoadingStates } from '../components/patterns/LoadingStates';
+export { MultiStepWizard } from '../components/patterns/MultiStepWizard';
+export { NotificationCenter } from '../components/patterns/NotificationCenter';
+export { NotificationDropdown } from '../components/patterns/NotificationDropdown';
+export { OnboardingWizard } from '../components/patterns/OnboardingWizard';
+export { OperationsList } from '../components/patterns/OperationsList';
+export { PaymentForm } from '../components/patterns/PaymentForm';
+export { PricingTable } from '../components/patterns/PricingTable';
+export { QuickActionToolbar } from '../components/patterns/QuickActionToolbar';
+export { SearchResults } from '../components/patterns/SearchResults';
+export { StatsDashboard } from '../components/patterns/StatsDashboard';
+export { UploadZone } from '../components/patterns/UploadZone';
+export { UserProfileCard } from '../components/patterns/UserProfileCard';
+
+// ============================================================================
+// ATOMIC DESIGN
+// ============================================================================
+
+// Molecules
+export { ActionButton } from '../components/atomic/molecules/ActionButton';
+export { FilterChip } from '../components/atomic/molecules/FilterChip';
+export { FormField } from '../components/atomic/molecules/FormField';
+export { SearchBar } from '../components/atomic/molecules/SearchBar';
+export { StatCard } from '../components/atomic/molecules/StatCard';
+export { TimelineItem } from '../components/atomic/molecules/TimelineItem';
+
+// Organisms
+export { FilterBar } from '../components/atomic/organisms/FilterBar';
+export { InvoiceTable } from '../components/atomic/organisms/InvoiceTable';
+export { LoginForm } from '../components/atomic/organisms/LoginForm';
+export { NavigationBar } from '../components/atomic/organisms/NavigationBar';
+export { StatsGrid } from '../components/atomic/organisms/StatsGrid';
+
+// Templates
+export { AuthTemplate } from '../components/atomic/templates/AuthTemplate';
+export { DashboardTemplate } from '../components/atomic/templates/DashboardTemplate';
+export { ListPageTemplate } from '../components/atomic/templates/ListPageTemplate';
+
+// Pages
+export { DashboardPage } from '../components/atomic/pages/DashboardPage';
+export { FactoringSelectionPage } from '../components/atomic/pages/FactoringSelectionPage';
+export { InvoiceListPage } from '../components/atomic/pages/InvoiceListPage';
+export { LoginPage } from '../components/atomic/pages/LoginPage';
+
+// ============================================================================
+// ACCESSIBILITY COMPONENTS
+// ============================================================================
+
+export { FocusTrap } from '../components/accessibility/FocusTrap';
+export { LiveRegion } from '../components/accessibility/LiveRegion';
+export { SkipLink } from '../components/accessibility/SkipLink';
+
+// ============================================================================
+// HELP SYSTEM
+// ============================================================================
+
+export { ContextualHelp } from '../components/help/ContextualHelp';
+export { HelpButton } from '../components/help/HelpButton';
+export { HelpCenter } from '../components/help/HelpCenter';
+export { HelpProvider } from '../components/help/HelpProvider';
+export { ProductTour } from '../components/help/ProductTour';
+
+// ============================================================================
+// THEME PROVIDER
+// ============================================================================
+
+export { ThemeProvider } from '../components/core/ThemeProvider';

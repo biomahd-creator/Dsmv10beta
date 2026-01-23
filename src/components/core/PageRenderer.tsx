@@ -81,6 +81,32 @@ import {
   KPIShowcasePage
 } from "../pages";
 
+// Advanced Components (NEW)
+import { VirtualizedListPage } from "../pages/VirtualizedListPage";
+import { InfiniteScrollPage } from "../pages/InfiniteScrollPage";
+import { SplitButtonPage } from "../pages/SplitButtonPage";
+import { FloatingActionButtonPage } from "../pages/FloatingActionButtonPage";
+import { BottomSheetPage } from "../pages/BottomSheetPage";
+import { MasonryGridPage } from "../pages/MasonryGridPage";
+import { TransferListPage } from "../pages/TransferListPage";
+import { RadarChartPage } from "../pages/RadarChartPage";
+import { AreaChartPage } from "../pages/AreaChartPage";
+import { OrgChartPage } from "../pages/OrgChartPage";
+
+// Business Components (NEW)
+import { InvoiceCardPage } from "../pages/InvoiceCardPage";
+import { PayorCardPage } from "../pages/PayorCardPage";
+import { RiskIndicatorPage } from "../pages/RiskIndicatorPage";
+import { CashFlowProjectionPage } from "../pages/CashFlowProjectionPage";
+import { LiquidityMeterPage } from "../pages/LiquidityMeterPage";
+import { FactoringRateDisplayPage } from "../pages/FactoringRateDisplayPage";
+import { DocumentVerificationPage } from "../pages/DocumentVerificationPage";
+import { CollectionTimelinePage } from "../pages/CollectionTimelinePage";
+
+// Patterns (NEW)
+import { EmptyStatePage } from "../pages/EmptyStatePage";
+import { ErrorBoundaryPage } from "../pages/ErrorBoundaryPage";
+
 import { PaymentForm } from "../patterns/PaymentForm";
 import { EditableTable } from "../patterns/EditableTable";
 
@@ -327,6 +353,52 @@ export function PageRenderer({ pageId }: PageRendererProps) {
       return <ChangelogPage />;
     case "kpi-showcase":
       return <KPIShowcasePage />;
+
+    // ===== ADVANCED COMPONENTS (NEW) =====
+    case "virtualized-list":
+      return <VirtualizedListPage />;
+    case "infinite-scroll":
+      return <InfiniteScrollPage />;
+    case "split-button":
+      return <SplitButtonPage />;
+    case "floating-action-button":
+      return <FloatingActionButtonPage />;
+    case "bottom-sheet":
+      return <BottomSheetPage />;
+    case "masonry-grid":
+      return <MasonryGridPage />;
+    case "transfer-list":
+      return <TransferListPage />;
+    case "radar-chart":
+      return <RadarChartPage />;
+    case "area-chart":
+      return <AreaChartPage />;
+    case "org-chart":
+      return <OrgChartPage />;
+
+    // ===== BUSINESS COMPONENTS (NEW) =====
+    case "invoice-card":
+      return <InvoiceCardPage />;
+    case "payor-card":
+      return <PayorCardPage />;
+    case "risk-indicator":
+      return <RiskIndicatorPage />;
+    case "cash-flow-projection":
+      return <CashFlowProjectionPage />;
+    case "liquidity-meter":
+      return <LiquidityMeterPage />;
+    case "factoring-rate-display":
+      return <FactoringRateDisplayPage />;
+    case "document-verification":
+      return <DocumentVerificationPage />;
+    case "collection-timeline":
+      return <CollectionTimelinePage />;
+
+    // ===== PATTERNS (NEW) =====
+    case "empty-state":
+      return <EmptyStatePage />;
+    case "error-boundary":
+      return <ErrorBoundaryPage />;
 
     default:
       return <HomePage />;

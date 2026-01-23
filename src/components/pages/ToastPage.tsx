@@ -1,8 +1,8 @@
-import { ComponentShowcase } from "../ui/component-showcase";
-import { Button } from "../ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import { Badge } from "../ui/badge";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
+import { ComponentShowcase } from "../ui/component-showcase";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card";
+import { Button } from "../ui/button";
 import { 
   CheckCircle2, 
   AlertCircle, 
@@ -305,7 +305,7 @@ export function ToastPage() {
         { text: "Feedback", variant: "secondary" }
       ]}
       previewComponent={<ToastDemos />}
-      codeBlock={`import { toast } from "sonner@2.0.3";
+      codeBlock={`import { toast } from "sonner";
 
 // Success
 toast.success("Operación exitosa", {

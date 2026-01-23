@@ -43,7 +43,15 @@ export function ChartsPage() {
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
               <XAxis dataKey="month" tick={{ fill: "hsl(var(--muted-foreground))" }} />
               <YAxis tick={{ fill: "hsl(var(--muted-foreground))" }} />
-              <Tooltip />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "hsl(var(--popover))",
+                  border: "1px solid hsl(var(--border))",
+                  borderRadius: "6px",
+                  color: "hsl(var(--popover-foreground))",
+                }}
+                labelStyle={{ color: "hsl(var(--foreground))" }}
+              />
               <Legend />
               <Line
                 type="monotone"
@@ -85,7 +93,15 @@ export function ChartDemo() {
         <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
         <XAxis dataKey="month" tick={{ fill: "hsl(var(--muted-foreground))" }} />
         <YAxis tick={{ fill: "hsl(var(--muted-foreground))" }} />
-        <Tooltip />
+        <Tooltip
+          contentStyle={{
+            backgroundColor: "hsl(var(--popover))",
+            border: "1px solid hsl(var(--border))",
+            borderRadius: "6px",
+            color: "hsl(var(--popover-foreground))",
+          }}
+          labelStyle={{ color: "hsl(var(--foreground))" }}
+        />
         <Legend />
         <Line
           type="monotone"

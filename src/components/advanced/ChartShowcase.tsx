@@ -112,7 +112,12 @@ const CustomTooltip = ({ active, payload }: any) => {
       <div className="bg-card border border-border rounded-lg p-3 shadow-lg elevation-2">
         <p className="font-semibold mb-1">{payload[0].payload.month || payload[0].payload.category || payload[0].name}</p>
         {payload.map((entry: any, index: number) => (
-          <p key={index} className="text-sm" style={{ color: entry.color }}>
+          <p 
+            key={index} 
+            className="text-sm" 
+            style={{ "--item-color": entry.color } as React.CSSProperties}
+            data-chart-color
+          >
             {entry.name}: {entry.value.toLocaleString()}
           </p>
         ))}

@@ -81,8 +81,8 @@ export function ColorPicker({ value = "#DEFB49", onChange }: ColorPickerProps) {
           <div className="space-y-2">
             <Label>Vista Previa</Label>
             <div
-              className="h-20 rounded-lg border"
-              style={{ backgroundColor: color }}
+              className="color-picker-preview h-20 rounded-lg border"
+              style={{ "--preview-bg": color } as React.CSSProperties}
             />
           </div>
         </div>
