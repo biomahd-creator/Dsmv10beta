@@ -8,8 +8,15 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   outDir: 'dist',
-  external: ['react', 'react-dom'],
-  treeshake: true,
+  external: [
+    'react',
+    'react-dom',
+    /^@radix-ui\/.*/,
+    'lucide-react',
+    'class-variance-authority',
+    'clsx',
+    'tailwind-merge'
+  ],  treeshake: true,
   minify: false, // Set to true for production
   bundle: true,
   esbuildOptions(options) {
